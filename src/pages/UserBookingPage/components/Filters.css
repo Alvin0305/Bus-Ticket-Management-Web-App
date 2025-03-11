@@ -19,12 +19,41 @@
 
 .checkbox-area * {
     margin-bottom: 5px;
+    display: flex;
+    align-items: center;
 }
 
 .filter-checkbox {
+    appearance: none; 
+    -webkit-appearance: none; 
+    -moz-appearance: none; 
+    
+    width: 30px; 
+    height: 30px;
+    
+    border: 2px solid #814CB2; 
+    border-radius: 5px; 
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
     margin-right: 10px;
 }
 
+.filter-checkbox:checked::before {
+    content: "✔"; 
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #814CB2; 
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .reset-heading {
-    color: #2644C8;
+    color: #814CB2;
 }

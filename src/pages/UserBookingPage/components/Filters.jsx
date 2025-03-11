@@ -22,6 +22,70 @@ function Filters() {
   const [ordinary, setOrdinary] = useState(true);
   const [limitedStop, setLimitedStop] = useState(true);
 
+  function handleDepartureBefore6AM() {
+    setDepartureBefore6AM(!departureBefore6AM);
+  }
+
+  function handleDeparture6AMto12PM() {
+    setDeparture6AMto12PM(!departure6AMto12PM);
+  }
+
+  function handleDeparture12PMto6PM() {
+    setDeparture12PMto6PM(!departure12PMto6PM);
+  }
+
+  function handleDepartureAfter6PM() {
+    setDepartureAfter6PM(!departureAfter6PM);
+  }
+
+  function handleSeater() {
+    setSeater(!seater);
+  }
+
+  function handleSleaper() {
+    setSleaper(!sleaper);
+  }
+
+  function handleAC() {
+    setAC(!AC);
+  }
+
+  function handleNonAC() {
+    setNonAC(!nonAC);
+  }
+
+  function handleArrivalBefore6AM() {
+    setArrivalBefore6AM(!arrivalBefore6AM);
+  }
+
+  function handleArrival6AMto12PM() {
+    setArrival6AMto12PM(!arrival6AMto12PM);
+  }
+
+  function handleArrival12PMto6PM() {
+    setArrival12PMto6PM(!arrival12PMto6PM);
+  }
+
+  function handleArrivalAfter6PM() {
+    setArrivalAfter6PM(!arrivalAfter6PM);
+  }
+
+  function handleOrdinary() {
+    setOrdinary(!ordinary);
+  }
+
+  function handleFast() {
+    setFast(!fast);
+  }
+
+  function handleSuperFast() {
+    setSuperFast(!superFast);
+  }
+
+  function handleLimitedStop() {
+    setLimitedStop(!limitedStop);
+  }
+
   return (
     <div className="filter">
       <div className="filter-and-reset">
@@ -37,7 +101,7 @@ function Filters() {
             type="checkbox"
             className="filter-checkbox"
             checked={departureBefore6AM}
-            onChange={setDepartureBefore6AM}
+            onChange={handleDepartureBefore6AM}
           />
           Before 6AM
         </div>
@@ -46,7 +110,7 @@ function Filters() {
             type="checkbox"
             className="filter-checkbox"
             checked={departure6AMto12PM}
-            onChange={setDeparture6AMto12PM}
+            onChange={handleDeparture6AMto12PM}
           />
           6AM to 12PM
         </div>
@@ -55,7 +119,7 @@ function Filters() {
             type="checkbox"
             className="filter-checkbox"
             checked={departure12PMto6PM}
-            onChange={setDeparture12PMto6PM}
+            onChange={handleDeparture12PMto6PM}
           />
           12PM to 6PM
         </div>
@@ -64,7 +128,7 @@ function Filters() {
             type="checkbox"
             className="filter-checkbox"
             checked={departureAfter6PM}
-            onChange={setDepartureAfter6PM}
+            onChange={handleDepartureAfter6PM}
           />
           After 6PM
         </div>
@@ -77,7 +141,7 @@ function Filters() {
             type="checkbox"
             className="filter-checkbox"
             checked={seater}
-            onChange={setSeater}
+            onChange={handleSeater}
           />
           SEATER
         </div>
@@ -86,7 +150,7 @@ function Filters() {
             type="checkbox"
             className="filter-checkbox"
             checked={sleaper}
-            onChange={setSleaper}
+            onChange={handleSleaper}
           />
           SLEAPER
         </div>
@@ -95,7 +159,7 @@ function Filters() {
             type="checkbox"
             className="filter-checkbox"
             checked={AC}
-            onChange={setAC}
+            onChange={handleAC}
           />
           AC
         </div>
@@ -104,7 +168,7 @@ function Filters() {
             type="checkbox"
             className="filter-checkbox"
             checked={nonAC}
-            onChange={setNonAC}
+            onChange={handleNonAC}
           />
           NON AC
         </div>
@@ -117,7 +181,7 @@ function Filters() {
             type="checkbox"
             className="filter-checkbox"
             checked={arrivalBefore6AM}
-            onChange={setArrivalBefore6AM}
+            onChange={handleArrivalBefore6AM}
           />
           Before 6AM
         </div>
@@ -126,7 +190,7 @@ function Filters() {
             type="checkbox"
             className="filter-checkbox"
             checked={arrival6AMto12PM}
-            onChange={setArrival6AMto12PM}
+            onChange={handleArrival6AMto12PM}
           />
           6AM to 12PM
         </div>
@@ -135,7 +199,7 @@ function Filters() {
             type="checkbox"
             className="filter-checkbox"
             checked={arrival12PMto6PM}
-            onChange={setArrival12PMto6PM}
+            onChange={handleArrival12PMto6PM}
           />
           12PM to 6PM
         </div>
@@ -144,7 +208,7 @@ function Filters() {
             type="checkbox"
             className="filter-checkbox"
             checked={arrivalAfter6PM}
-            onChange={setArrivalAfter6PM}
+            onChange={handleArrivalAfter6PM}
           />
           After 6PM
         </div>
@@ -157,7 +221,7 @@ function Filters() {
             type="checkbox"
             className="filter-checkbox"
             checked={superFast}
-            onChange={setSuperFast}
+            onChange={handleSuperFast}
           />
           SUPER FAST
         </div>
@@ -166,7 +230,7 @@ function Filters() {
             type="checkbox"
             className="filter-checkbox"
             checked={fast}
-            onChange={setFast}
+            onChange={handleFast}
           />
           FAST
         </div>
@@ -175,7 +239,7 @@ function Filters() {
             type="checkbox"
             className="filter-checkbox"
             checked={ordinary}
-            onChange={setOrdinary}
+            onChange={handleOrdinary}
           />
           ORDINARY
         </div>
@@ -184,7 +248,7 @@ function Filters() {
             type="checkbox"
             className="filter-checkbox"
             checked={limitedStop}
-            onChange={setLimitedStop}
+            onChange={handleLimitedStop}
           />
           LIMITED STOP
         </div>
