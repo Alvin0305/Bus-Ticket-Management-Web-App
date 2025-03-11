@@ -1,0 +1,30 @@
+.filter {
+    border: 1px solid gray;
+    width: 300px;
+    padding: 20px 20px;
+    align-self: flex-start;
+    margin-right: 10px;
+}
+
+.filter-and-reset {
+    display: flex;
+    justify-content: space-between;
+}
+
+.checkbox-area {
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.checkbox-area * {
+    margin-bottom: 5px;
+}
+
+.filter-checkbox {
+    margin-right: 10px;
+}
+
+.reset-heading {
+    color: #2644C8;
+}

@@ -1,0 +1,58 @@
+.bus-tile {
+    display: flex;
+    position: relative;
+    align-items: center;
+    margin: 0px 10px 20px 10px;
+    justify-content: space-evenly;
+    gap: 20px;
+    border: 1px solid gray;
+    padding: 16px;
+}
+
+.bus-button {
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    background-color: #BC0A0A;
+    border-radius: 0px;
+    padding: 10px 20px;
+    border: none;
+    color: white;
+    font-weight: bold;
+}
+
+.bus-button:hover {
+    background-color: #700909;
+}
+
+.bus-button:active {
+    background-color: #5e1616;
+}
+
+.bus-fare-span {
+    font-size: 8px;
+    color: #847E7E;
+}
+
+.bus-type, .bus-arr, .bus-dep, .bus-seats, .bus-time {
+    color: #847E7E;
+    font-weight: lighter;
+    padding: 0px !important;
+}
+
+.bus-arr-time, .bus-dep-time {
+    padding: 0px;
+    margin: 0px;
+}
+
+.bus-arr, .bus-dep {
+    margin: 0px;
+}
+
+.bus-arr-time-arr, .bus-dep-time-dep {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+    justify-items: center;
+}

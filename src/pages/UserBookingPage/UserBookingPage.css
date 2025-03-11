@@ -1,0 +1,72 @@
+.user-booking-page {
+    padding: 10px;
+}
+
+.user-booking-page-heading {
+    margin-bottom: 20px;
+}
+
+.filters-and-buses{
+    display: flex;
+}
+
+.bus-ticket-heading {
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.from-to-heading {
+    font-size: 30px;
+}
+
+.from-to-subheading {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.from-to-third-heading {
+    display: flex;
+    align-items: center;
+}
+
+.user-booking-from {
+    font-size: 32px;
+    margin-right: 10px;
+    font-weight: lighter;
+}
+
+.user-booking-arrow {
+    font-size: 32px;
+}
+
+.user-booking-to {
+    font-size: 32px;
+    margin-left: 10px;
+    font-weight: lighter;
+}
+
+.from-to-date-container {
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+    display: flex;
+    flex-direction: row;
+    margin: 10px 10px 30px 0px;
+}
+
+.date-container {
+    margin-left: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.date {
+    font-size: 24px;
+    margin: 0px;
+}
+
+.day {
+    font-size: 24px;
+    margin: 0px;
+}
