@@ -139,14 +139,16 @@ function UserBookingPage({ from, to, date }) {
       },
   ];
 
-  const formatedDate = date.toLocaleDateString("en-GB", {
-    day: "2-digit",
-    month: "long",
-  });
+  // const formatedDate = date.toLocaleDateString("en-GB", {
+  //   day: "2-digit",
+  //   month: "long",
+  // });
+  const formatedDate = "12-23-25"
 
-  const dayName = date
-    .toLocaleDateString("en-GB", { weekday: "long" })
-    .substring(0, 3);
+  // const dayName = date
+  //   .toLocaleDateString("en-GB", { weekday: "long" })
+  //   .substring(0, 3);
+  const dayName = "monday";
 
   const [buses, setBuses] = useState(initialBuses);
 

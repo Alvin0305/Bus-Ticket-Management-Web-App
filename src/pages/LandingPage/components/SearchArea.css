@@ -1,0 +1,117 @@
+.landing-page-search-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #F25959;
+    width: 100vw;
+    height: 400px;
+    /* position: relative; */
+}
+
+.landing-page-search-bar {
+    display: flex;
+    justify-content: space-evenly;
+    border-radius: 40px;
+    background-color: white;
+    height: 40%;
+    width: 75%;
+}
+
+.landing-page-from-div, .landing-page-to-div, .landing-page-date-div {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    padding: 20px;
+    padding-left: 40px;
+    border-right: 1px solid gray;
+}
+
+.landing-page-date {
+    background-color: transparent;
+    color: transparent;
+    height: 0px;
+    width: 0px;
+}
+
+.landing-page-date-button-text {
+    display: flex;
+    align-items: center;
+}
+
+.landing-page-date-button {
+    background-color: transparent;
+    border: none;
+    margin-right: 10px;
+    cursor: pointer;
+    height: 50px;
+    width: 50px;
+    border-radius: 5px;
+}
+
+.landing-page-date-button:hover {
+    background-color: #eee;
+}
+
+
+.landing-page-selected-date {
+    font-size: 20pt;
+    margin: 0px;
+}
+
+.landing-page-date-button-text {
+    display: flex;
+}
+
+.landing-page-from-div {
+    position: relative;
+}
+
+.landing-page-swap-button {
+    position: absolute;
+    top: 50%;
+    right: -20px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 20px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border: 1px solid gray;
+}
+
+.landing-page-from-label, .landing-page-to-label, .landing-page-date-label {
+    color: #827B7B;
+    font-size: 15pt;
+    margin: 0px;
+    margin-bottom: 10px;
+}
+
+.landing-page-from, .landing-page-to, .landing-page-date {
+    border: none;
+    height: 40px;
+    font-size: 20pt;
+} 
+
+
+.landing-page-search-button {
+    flex: 1;
+    border-radius: 0px 40px 40px 0px;
+    background-color: #814CB2;
+    border: none;
+    color: white;
+    font-size: 20pt;
+}
+
+.landing-page-search-button:hover {
+    background-color: #8f4FBF;
+}
+
+.landing-page-search-button:active {
+    background-color: #7f3FAF;
+}

@@ -1,0 +1,41 @@
+.landing-page-top-bar {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    margin: 10px 0px;
+}
+
+.landing-page-bus-icon {
+    color: red;
+    margin-left: 20px;
+}
+
+.landing-page-headphone-log-out {
+    display: flex;
+    justify-content: space-between;
+}
+
+.landing-page-headphone-icon, .landing-page-logout-icon {
+    margin-right: 10px;
+}
+
+.landing-page-headphone-button, .landing-page-logout-button {
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    border: none;
+    border-radius: 5px;
+    padding: 0px 15px;
+    font-size: 15pt;
+}
+
+.landing-page-headphone-button:hover, .landing-page-logout-button:hover {
+    background-color: #ddd;
+}
+
+.landing-page-headphone-button:active, .landing-page-logout-button:active {
+    background-color: #aaa;
+    color: white;
+}
+
