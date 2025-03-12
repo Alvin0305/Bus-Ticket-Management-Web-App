@@ -13,7 +13,7 @@
     position: absolute;
     right: 0px;
     bottom: 0px;
-    background-color: #BC0A0A;
+    background-color: #F46E6E;
     border-radius: 0px;
     padding: 10px 20px;
     border: none;
@@ -22,11 +22,11 @@
 }
 
 .bus-button:hover {
-    background-color: #700909;
+    background-color: #FE7E7E;
 }
 
 .bus-button:active {
-    background-color: #5e1616;
+    background-color: #A44E4E;
 }
 
 .bus-fare-span {
