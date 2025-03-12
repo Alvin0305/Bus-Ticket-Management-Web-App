@@ -37,7 +37,9 @@
 
 .landing-page-date-button-text {
     display: flex;
-    align-items: center;
+    justify-content: space-between;
+    padding-left: 0px;
+    width: 100%;
 }
 
 .landing-page-date-button {
@@ -85,7 +87,7 @@
     border: 1px solid gray;
 }
 
-.landing-page-from-label, .landing-page-to-label, .landing-page-date-label {
+.landing-page-from-label, .landing-page-to-label, .landing-page-date-label, .landing-page-selected-year {
     color: #827B7B;
     font-size: 15pt;
     margin: 0px;
@@ -114,4 +116,8 @@
 
 .landing-page-search-button:active {
     background-color: #7f3FAF;
+}
+
+.landing-page-date-input-div {
+    display: flex;
 }

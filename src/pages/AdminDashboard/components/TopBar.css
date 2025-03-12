@@ -1,0 +1,16 @@
+.admin-dashboard-topbar {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 10px;
+}
+
+.admin-user-button, .admin-menu-button {
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.admin-user-button:hover, .admin-menu-button:hover {
+    background-color: #ddd;
+}

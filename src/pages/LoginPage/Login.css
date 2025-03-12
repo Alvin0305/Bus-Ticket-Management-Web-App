@@ -1,0 +1,66 @@
+.login-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    background: #565C63;
+}
+
+.login-window {
+    display:flex;
+    flex-direction:column;
+    justify-items: center;
+    align-items: center;
+    height: 60vh;
+    width: 30vw;
+    background: #3B3F45;
+    padding: "20px";
+}
+
+.login-bus-image{
+    height: 60vh;
+    width: 30vw;
+    background-color: blue;
+    margin: 20px;
+}
+
+.login-box {
+    display: inline-flex;
+    /* background-color: #565C63; */
+    background: #3B3F45;
+    height: 65vh;
+    padding: 20px;
+    justify-items: center;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.login-input {
+    margin: 10px;
+    width: 55vh;
+    height: 35px;
+    background: #565C63;
+    border: none;
+    padding-left: 8px;
+}
+
+.login-button {
+    margin: 10px;
+    width: 57vh;
+    height: 35px;
+    padding: 5px;
+    background: #814CB2;
+    
+}
+.login-head {
+    font-family:'Franklin Gothic Medium';
+    font-size:xxx-large;
+    margin-top: 100px;
+    margin-bottom: 0px;
+}
+.reg-link {
+    justify-self: left;
+    align-self: flex-start;
+    margin-left: 10px;
+}

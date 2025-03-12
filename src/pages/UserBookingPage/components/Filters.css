@@ -56,4 +56,9 @@
 
 .reset-heading {
     color: #814CB2;
+    cursor: pointer;
+}
+
+.reset-heading:hover {
+    transform: scale(1.1);
 }

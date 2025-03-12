@@ -2,8 +2,11 @@ import { useState } from "react";
 import Buses from "./components/Buses";
 import Filters from "./components/Filters";
 import "./UserBookingPage.css";
+import { useLocation } from "react-router-dom";
 
-function UserBookingPage({ from, to, date }) {
+function UserBookingPage() {
+  const location = useLocation();
+  const {from, to, date} = location.state || {};
   const initialBuses = [
     {
       name: "Bus1",
@@ -139,16 +142,16 @@ function UserBookingPage({ from, to, date }) {
       },
   ];
 
-  // const formatedDate = date.toLocaleDateString("en-GB", {
-  //   day: "2-digit",
-  //   month: "long",
-  // });
-  const formatedDate = "12-23-25"
+  const formatedDate = date.toLocaleDateString("en-GB", {
+    day: "2-digit",
+    month: "long",
+  });
+  // const formatedDate = "12-23-25"
 
-  // const dayName = date
-  //   .toLocaleDateString("en-GB", { weekday: "long" })
-  //   .substring(0, 3);
-  const dayName = "monday";
+  const dayName = date
+    .toLocaleDateString("en-GB", { weekday: "long" })
+    .substring(0, 3);
+  // const dayName = "monday";
 
   const [buses, setBuses] = useState(initialBuses);
 
