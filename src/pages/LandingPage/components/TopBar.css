@@ -28,6 +28,7 @@
     border-radius: 5px;
     padding: 0px 15px;
     font-size: 15pt;
+    cursor: pointer;
 }
 
 .landing-page-headphone-button:hover, .landing-page-logout-button:hover {

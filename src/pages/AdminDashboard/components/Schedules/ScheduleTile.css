@@ -1,0 +1,9 @@
+.schedule-tile {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 50px;
+    border: 1px solid gray;
+    flex: 1;
+    margin-bottom: 10px;
+    align-items: center;
+}

@@ -17,7 +17,7 @@ function NavigationButton({ name, onAction }) {
         }
     }
 
-    return <div className="admin-nav-button">
+    return <div className="admin-nav-button" onClick={onAction}>
         {getIcon()}
         <h1 className="admin-nav-text">{name}</h1>
     </div>

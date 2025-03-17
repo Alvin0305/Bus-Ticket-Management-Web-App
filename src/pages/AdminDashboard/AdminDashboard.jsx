@@ -142,14 +142,15 @@ function AdminDashBoard() {
   ];
 
   const [buses, setBuses] = useState(initialBuses);
+  const [session, setSession] = useState(<Buses buses={buses}></Buses>);
 
   return (
     <div className="admin-dashboard">
         <TopBar></TopBar>
-        <NavigationSession></NavigationSession>
+        <NavigationSession setSession={setSession} buses={buses}></NavigationSession>
       <div className="admin-filters-and-buses">
         <Filters></Filters>
-        <Buses buses={buses}></Buses>
+        {session}
       </div>
     </div>
   );

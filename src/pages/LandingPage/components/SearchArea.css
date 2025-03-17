@@ -108,6 +108,7 @@
     border: none;
     color: white;
     font-size: 20pt;
+    cursor: pointer;
 }
 
 .landing-page-search-button:hover {

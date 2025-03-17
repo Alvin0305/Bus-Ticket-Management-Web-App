@@ -1,0 +1,114 @@
+.bus-details {
+    padding: 20px;
+    background-color: #DDDDDD;
+    margin-top: 10px;
+    padding-top: 0px;
+}
+
+.bus-details-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid gray;
+}
+
+.bus-details-price-div {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.bus-details-price-label {
+    font-weight: 200;
+    font-size: 20pt;
+    margin-right: 16px;
+}
+
+.bus-details-inr {
+    font-weight: 100;
+    font-size: 10pt;
+}
+
+.bus-details-price {
+    font-size: 24pt;
+}
+
+.bus-details-bottom {
+    margin: 40px;
+}
+
+.bus-details-seat-label-div {
+    display: flex;
+    margin: 20px;
+    margin-bottom: 40px;
+    margin-left: 0px;
+}
+
+.bus-details-seat-label {
+    background-color: #A19CD2;
+    color: black;
+    font-size: 16pt;
+    font-weight: 100;
+    padding: 20px 20px;
+}
+
+.bus-details-seats-and-legend {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.bus-details-right-div {
+    height: 400px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.bus-details-legend-label {
+    font-size: 20pt;
+    font-weight: 500;
+}
+
+.bus-details-legend {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.bus-details-available-seat, .bus-details-not-available-seat {
+    height: 30px;
+    width: 30px;
+    margin-right: 10px;
+}
+
+.bus-details-available-seat {
+    background-color: white;
+    border: 1px solid #5E62E2;
+}
+
+.bus-details-not-available-seat {
+    background-color: #847E7E;
+}
+
+.bus-details-available-seat-div {
+    display: flex;
+    align-items: center;
+}
+
+.bus-details-available-seat-label, .bus-details-not-available-seat-label {
+    font-weight: 100;
+    font-size: 16pt;
+}
+
+.bus-details-book-button {
+    margin-top: 40px;
+    padding: 30px 50px;
+    background-color: #814CB2;
+    color: white;
+    font-size: 20pt;
+    border-radius: 10px;
+}

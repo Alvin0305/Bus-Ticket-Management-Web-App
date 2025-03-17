@@ -27,6 +27,12 @@ function SearchArea() {
     }
   }
 
+  function swap() {
+    const temp = to;
+    setTo(from);
+    setFrom(temp);
+  }
+
   function formatDate() {
     return new Date(selectedDate).toLocaleDateString("en-GB", {
       day: "numeric",
@@ -60,7 +66,7 @@ function SearchArea() {
             value={from}
             onChange={(e) => setFrom(e.target.value)}
           />
-          <button className="landing-page-swap-button">
+          <button className="landing-page-swap-button" onClick={swap}>
             <ArrowLeftRight className="landing-page-swap-icon"></ArrowLeftRight>
           </button>
         </div>

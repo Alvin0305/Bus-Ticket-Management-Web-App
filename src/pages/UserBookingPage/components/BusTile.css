@@ -1,8 +1,12 @@
+.bus-tile-wrapper {
+    padding: 0px 10px 20px 10px;
+}
+
 .bus-tile {
     display: flex;
     position: relative;
     align-items: center;
-    margin: 0px 10px 20px 10px;
+    margin: 0px;
     justify-content: space-evenly;
     gap: 20px;
     border: 1px solid gray;

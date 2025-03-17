@@ -1,0 +1,45 @@
+.usertile {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid gray;
+    height: 200px;
+}
+
+.usertile:hover {
+    transform: scale(1.005);
+    border: 3px solid #814CB2;
+}
+
+.user-icon {
+    margin-right: 40px;
+    margin-left: 20px;
+    color: #814CB2;
+}
+
+.user-id-gender {
+    display: flex;
+    align-items: center;
+}
+
+.user-id {
+    margin: 0px;
+    margin-right: 20px;
+}
+
+.user-id-gender, .user-name, .user-email, .user-phone, .user-dob {
+    margin: 0px;
+}
+
+.user-name {
+    color: #444;
+}
+
+.user-email {
+    font-size: 15pt;
+}
+
+.user-dob {
+    font-size: 10pt;
+}

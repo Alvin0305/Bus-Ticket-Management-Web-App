@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./Filters.css";
 
-function Filters() {
+function Filters({ setBuses }) {
   const [arrivalBefore6AM, setArrivalBefore6AM] = useState(true);
   const [arrival6AMto12PM, setArrival6AMto12PM] = useState(true);
   const [arrival12PMto6PM, setArrival12PMto6PM] = useState(true);

@@ -1,0 +1,6 @@
+.user-session {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns per row */
+    gap: 20px; /* Space between items */
+    padding-left: 10px;
+}
