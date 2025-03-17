@@ -1,5 +1,63 @@
-.bus-seat {
-    height: 400px;
-    width: 55%;
+.bus-seat-selector {
     background-color: white;
+    display: flex;
+    padding: 20px;
+}
+
+.steering-div {
+    border-right: 1px solid gray;
+    padding: 20px 20px 0px 0px;
+    display: flex;
+    flex-direction: column;
+}
+
+.bus-seat-selector-seats-div {
+    padding: 0px 30px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.bus-seats-row {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.bus-seat-box {
+    background-color: white;
+    border: 1px solid gray;
+    height: 30px;
+    width: 30px;
+    margin: 4px;
+    cursor: pointer;
+}
+
+.bus-seat-box:hover {
+    background-color: greenyellow;
+}
+
+.bus-seat-box-selected {
+    background-color: green;
+    border: 1px solid gray;
+    height: 30px;
+    width: 30px;
+    margin: 4px;
+    cursor: pointer;
+}
+
+.bus-seat-box-booked {
+    background-color: gray;
+    border: 1px solid gray;
+    height: 30px;
+    width: 30px;
+    margin: 4px;
+}
+
+.center-seat-div {
+    display: flex;
+}
+
+.seats-spacer {
+    flex: 1;
 }

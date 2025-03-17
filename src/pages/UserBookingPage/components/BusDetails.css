@@ -59,7 +59,7 @@
 }
 
 .bus-details-right-div {
-    height: 400px;
+
     width: 50%;
     display: flex;
     flex-direction: column;
@@ -106,9 +106,17 @@
 
 .bus-details-book-button {
     margin-top: 40px;
-    padding: 30px 50px;
+    padding: 20px 50px;
     background-color: #814CB2;
     color: white;
     font-size: 20pt;
     border-radius: 10px;
+}
+
+.bus-details-book-button:hover {
+    background-color: #5E62E2;
+}
+
+.bus-details-book-button:active {
+    background-color: #847E7E;
 }

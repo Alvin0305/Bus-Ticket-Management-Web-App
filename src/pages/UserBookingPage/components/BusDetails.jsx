@@ -1,8 +1,23 @@
 import { XCircle } from "lucide-react";
 import Seats from "./Seats";
 import "./BusDetails.css";
+import { useState } from "react";
 
 function BusDetails({ bus, onClose }) {
+
+  const getBookedSeats = () => {
+    // replace with corresponding API call to get the seats booked in this bus
+    return [];
+  }
+
+  const [selectedSeats, setSelectedSeats] = useState([]);
+  const [bookedSeats, setBookedSeats] = useState(getBookedSeats());
+
+  const onClick = () => {
+    // add API call for adding selectedSeats to the bookedSeats list
+    setBookedSeats([...bookedSeats, ...selectedSeats]);
+  }
+
   return (
     <div className="bus-details">
       <div className="bus-details-top">
@@ -21,7 +36,7 @@ function BusDetails({ bus, onClose }) {
           </h2>
         </div>
         <div className="bus-details-seats-and-legend">
-          <Seats></Seats>
+          <Seats bus={bus} selectedSeats={selectedSeats} setSelectedSeats={setSelectedSeats} bookedSeats={bookedSeats}></Seats>
           <div className="bus-details-right-div">
             <h2 className="bus-details-legend-label">SEAT LEGEND</h2>
             <div className="bus-details-legend">
@@ -36,7 +51,7 @@ function BusDetails({ bus, onClose }) {
                 </h4>
               </div>
             </div>
-            <button className="bus-details-book-button">BOOK TICKETS</button>
+            <button className="bus-details-book-button" onClick={onClick}>BOOK TICKETS</button>
           </div>
         </div>
       </div>
