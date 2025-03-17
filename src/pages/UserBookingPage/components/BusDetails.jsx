@@ -4,11 +4,10 @@ import "./BusDetails.css";
 import { useState } from "react";
 
 function BusDetails({ bus, onClose }) {
-
   const getBookedSeats = () => {
     // replace with corresponding API call to get the seats booked in this bus
     return [];
-  }
+  };
 
   const [selectedSeats, setSelectedSeats] = useState([]);
   const [bookedSeats, setBookedSeats] = useState(getBookedSeats());
@@ -16,7 +15,7 @@ function BusDetails({ bus, onClose }) {
   const onClick = () => {
     // add API call for adding selectedSeats to the bookedSeats list
     setBookedSeats([...bookedSeats, ...selectedSeats]);
-  }
+  };
 
   return (
     <div className="bus-details">
@@ -27,7 +26,13 @@ function BusDetails({ bus, onClose }) {
             <span className="bus-details-inr">INR</span>600
           </h1>
         </div>
-        <XCircle size={32} onClick={onClose}></XCircle>
+        <div className="bus-details-close-icon-div">
+          <XCircle
+            size={32}
+            onClick={onClose}
+            className="bus-details-close-icon"
+          ></XCircle>
+        </div>
       </div>
       <div className="bus-details-bottom">
         <div className="bus-details-seat-label-div">
@@ -36,7 +41,12 @@ function BusDetails({ bus, onClose }) {
           </h2>
         </div>
         <div className="bus-details-seats-and-legend">
-          <Seats bus={bus} selectedSeats={selectedSeats} setSelectedSeats={setSelectedSeats} bookedSeats={bookedSeats}></Seats>
+          <Seats
+            bus={bus}
+            selectedSeats={selectedSeats}
+            setSelectedSeats={setSelectedSeats}
+            bookedSeats={bookedSeats}
+          ></Seats>
           <div className="bus-details-right-div">
             <h2 className="bus-details-legend-label">SEAT LEGEND</h2>
             <div className="bus-details-legend">
@@ -51,7 +61,9 @@ function BusDetails({ bus, onClose }) {
                 </h4>
               </div>
             </div>
-            <button className="bus-details-book-button" onClick={onClick}>BOOK TICKETS</button>
+            <button className="bus-details-book-button" onClick={onClick}>
+              BOOK TICKETS
+            </button>
           </div>
         </div>
       </div>

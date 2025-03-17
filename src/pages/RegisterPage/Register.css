@@ -4,70 +4,87 @@
     justify-content: center;
     height: 100vh;
     width: 100vw;
-    background: #565C63;
-}
-
-.register-window {
-    display:flex;
-    flex-direction:column;
+    background: #565c63;
+  
+    place-items: center;
+    font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+  
+    color-scheme: light dark;
+    color: rgba(255, 255, 255, 0.87);
+    background-color: #242424;
+  
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  .register-window {
+    display: flex;
+    flex-direction: column;
     justify-items: center;
     align-items: center;
     height: 60vh;
     width: 30vw;
-    background: #3B3F45;
+    background: #3b3f45;
     padding: "20px";
-}
-
-.register-bus-image{
+  }
+  
+  .register-bus-image {
     height: 60vh;
     width: 30vw;
     background-color: blue;
     margin: 20px;
-}
-
-.register-box {
+  }
+  
+  .register-box {
     display: inline-flex;
     /* background-color: #565C63; */
-    background: #3B3F45;
+    background: #3b3f45;
     height: 65vh;
     padding: 20px;
     justify-items: center;
     align-items: center;
     justify-content: space-between;
-}
-
-.register-input {
+  }
+  
+  .register-input {
     margin: 10px;
     width: 53vh;
     height: 35px;
-    background: #565C63;
+    background: #565c63;
     border: none;
     padding-left: 8px;
-}
-
-.register-button {
+  }
+  
+  .register-button {
     margin: 10px;
     margin-top: 20px;
     width: 53vh;
     height: 40px;
     padding: 5px;
-    background: #814CB2;
-    
-}
-.register-head {
-    font-family:'Franklin Gothic Medium';
+    background: #814cb2;
+  }
+  .register-head {
+    font-family: "Franklin Gothic Medium";
     font-size: 51px;
     margin-top: 50px;
     margin-bottom: 0px;
-}
-.login-link {
+  }
+  .login-link {
     justify-self: left;
     align-self: flex-start;
     margin-left: 20px;
-}
-
-.register-agree-checkbox {
+  }
+  
+  .register-agree-checkbox {
     justify-self: left;
     align-self: flex-start;
     margin-left: 20px;
-}
+  }
+  
+  body {
+    margin: 0;
+  }

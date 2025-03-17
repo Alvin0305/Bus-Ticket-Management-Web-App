@@ -14,7 +14,7 @@ const Login = () => {
     try {
       // const response = await axios.post(`${BACKEND_URL}/api/url/shorten`, { url });
       // if (response.status === 200) {
-      navigate("/landingpage");
+      navigate("/landing-page");
       // }
     } catch (error) {
       alert("Invalid credentials");
@@ -27,6 +27,7 @@ const Login = () => {
         <img className="login-bus-image" src="images.jpeg" alt="bus image" />
         <div
           className="login-window"
+          //   style={{ background: "#3B3F45", padding: "20px", borderRadius: "10px" }}
         >
           <h2 className="login-head">Login to your Account</h2>
           <p className="reg-link">

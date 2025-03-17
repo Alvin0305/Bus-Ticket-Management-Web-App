@@ -4,63 +4,89 @@
     justify-content: center;
     height: 100vh;
     width: 100vw;
-    background: #565C63;
-}
-
-.login-window {
-    display:flex;
-    flex-direction:column;
+    background: #565c63;
+  
+    margin: 0;
+    place-items: center;
+    font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+  
+    color-scheme: light dark;
+    color: rgba(255, 255, 255, 0.87);
+    background-color: #242424;
+  
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  .login-window {
+    display: flex;
+    flex-direction: column;
     justify-items: center;
     align-items: center;
     height: 60vh;
     width: 30vw;
-    background: #3B3F45;
+    background: #3b3f45;
     padding: "20px";
-}
-
-.login-bus-image{
+  }
+  
+  .login-bus-image {
     height: 60vh;
     width: 30vw;
     background-color: blue;
     margin: 20px;
-}
-
-.login-box {
+  }
+  
+  .login-box {
     display: inline-flex;
     /* background-color: #565C63; */
-    background: #3B3F45;
+    background: #3b3f45;
     height: 65vh;
     padding: 20px;
     justify-items: center;
     align-items: center;
     justify-content: space-between;
-}
-
-.login-input {
+    border-radius: 20px;
+  }
+  
+  .login-input {
     margin: 10px;
     width: 55vh;
     height: 35px;
-    background: #565C63;
+    background: #565c63;
     border: none;
     padding-left: 8px;
-}
-
-.login-button {
+  }
+  
+  .login-button {
     margin: 10px;
     width: 57vh;
     height: 35px;
-    padding: 5px;
-    background: #814CB2;
-    
-}
-.login-head {
-    font-family:'Franklin Gothic Medium';
-    font-size:xxx-large;
+    background: #814cb2;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    padding: 0.6em 1.2em;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+    cursor: pointer;
+    transition: border-color 0.25s;
+  }
+  .login-head {
+    font-family: "Franklin Gothic Medium";
+    font-size: xxx-large;
     margin-top: 100px;
     margin-bottom: 0px;
-}
-.reg-link {
+  }
+  .reg-link {
     justify-self: left;
     align-self: flex-start;
     margin-left: 10px;
-}
+  }
+  
+  body {
+    margin: 0;
+  }

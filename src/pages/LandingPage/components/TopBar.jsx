@@ -1,11 +1,16 @@
 import { BusFront, Headphones, LogOut } from "lucide-react";
 import "./TopBar.css";
+import { useNavigate } from "react-router-dom";
 
 function handleHelp() {}
 
-function handleLogout() {}
-
 function TopBar() {
+
+  const navigate = useNavigate();
+  function handleLogout() {
+    navigate("/");
+  }
+
   return (
     <div className="landing-page-top-bar">
       <BusFront size={50} className="landing-page-bus-icon"></BusFront>

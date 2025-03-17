@@ -32,7 +32,7 @@ const Register = () => {
     try {
       // const response = await axios.post(`${BACKEND_URL}/api/url/shorten`, { url });
       // if (response.status === 201) {
-      navigate("/landingpage");
+      navigate("/landing-page");
       // }
     } catch (error) {
       alert("Registration failed");

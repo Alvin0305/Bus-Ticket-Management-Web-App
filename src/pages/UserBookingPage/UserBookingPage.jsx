@@ -2,7 +2,8 @@ import { useState } from "react";
 import Buses from "./components/Buses";
 import Filters from "./components/Filters";
 import "./UserBookingPage.css";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
+import { ArrowRight } from "lucide-react";
 
 function UserBookingPage() {
   const location = useLocation();
@@ -155,6 +156,11 @@ function UserBookingPage() {
   }
 
   const [buses, setBuses] = useState(getBuses());
+  const navigate = useNavigate();
+
+  const gotoLoginPage = () => {
+    navigate("/landing-page");
+  }
 
   return (
     <div className="user-booking-page">
@@ -164,13 +170,10 @@ function UserBookingPage() {
           {from} to {to}
         </span>
       </div>
-      <div className="from-to-subheading">
-        {from} to {to} Bus
-      </div>
       <div className="from-to-date-container">
         <div className="from-to-third-heading">
           <h3 className="user-booking-from">{from}</h3>
-          <h3 className="user-booking-arrow"> → </h3>
+          <ArrowRight size={20}></ArrowRight>
           <h3 className="user-booking-to">{to}</h3>
         </div>
 
@@ -178,6 +181,7 @@ function UserBookingPage() {
           <h3 className="date">{formatedDate}</h3>
           <h3 className="day">{dayName}</h3>
         </div>
+        <button className="modify-button" onClick={gotoLoginPage}>Modify</button>
       </div>
       <div className="booking-page">
         <div className="filters-and-buses">

@@ -22,68 +22,111 @@ function Filters({ setBuses }) {
   const [ordinary, setOrdinary] = useState(true);
   const [limitedStop, setLimitedStop] = useState(true);
 
+  const getBuses = () => {
+    // add the API call for retrieving the buses satisying given condition and return it
+    return [];
+  }
+
+  const onReset = () => {
+    setArrivalBefore6AM(true);
+    setArrival6AMto12PM(true);
+    setArrival12PMto6PM(true);
+    setArrivalAfter6PM(true);
+
+    setDepartureBefore6AM(true);
+    setDeparture6AMto12PM(true);
+    setDeparture12PMto6PM(true);
+    setDepartureAfter6PM(true);
+
+    setSleaper(true);
+    setAC(true);
+    setNonAC(true);
+    setSeater(true);
+
+    setSuperFast(true);
+    setFast(true);
+    setOrdinary(true);
+    setLimitedStop(true);
+  }
+
   function handleDepartureBefore6AM() {
     setDepartureBefore6AM(!departureBefore6AM);
+    setBuses(getBuses());
   }
 
   function handleDeparture6AMto12PM() {
     setDeparture6AMto12PM(!departure6AMto12PM);
+    setBuses(getBuses());
   }
 
   function handleDeparture12PMto6PM() {
     setDeparture12PMto6PM(!departure12PMto6PM);
+    setBuses(getBuses());
   }
 
   function handleDepartureAfter6PM() {
     setDepartureAfter6PM(!departureAfter6PM);
+    setBuses(getBuses());
   }
 
   function handleSeater() {
     setSeater(!seater);
+    setBuses(getBuses());
   }
 
   function handleSleaper() {
     setSleaper(!sleaper);
+    setBuses(getBuses());
   }
 
   function handleAC() {
     setAC(!AC);
+    setBuses(getBuses());
   }
 
   function handleNonAC() {
     setNonAC(!nonAC);
+    setBuses(getBuses());
   }
 
   function handleArrivalBefore6AM() {
     setArrivalBefore6AM(!arrivalBefore6AM);
+    setBuses(getBuses());
   }
 
   function handleArrival6AMto12PM() {
     setArrival6AMto12PM(!arrival6AMto12PM);
+    setBuses(getBuses());
   }
 
   function handleArrival12PMto6PM() {
     setArrival12PMto6PM(!arrival12PMto6PM);
+    setBuses(getBuses());
   }
 
   function handleArrivalAfter6PM() {
     setArrivalAfter6PM(!arrivalAfter6PM);
+    setBuses(getBuses());
   }
 
   function handleOrdinary() {
     setOrdinary(!ordinary);
+    setBuses(getBuses());
   }
 
   function handleFast() {
     setFast(!fast);
+    setBuses(getBuses());
   }
 
   function handleSuperFast() {
     setSuperFast(!superFast);
+    setBuses(getBuses());
   }
 
   function handleLimitedStop() {
     setLimitedStop(!limitedStop);
+    setBuses(getBuses());
   }
 
   return (
@@ -92,7 +135,7 @@ function Filters({ setBuses }) {
         <h3 className="filter-heading" id="filter">
           FILTERS
         </h3>
-        <h3 className="reset-heading">RESET</h3>
+        <h3 className="reset-heading" onClick={onReset}>RESET</h3>
       </div>
       <h3>DEPARTURE TIME</h3>
       <div className="checkbox-area">
