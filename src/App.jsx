@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "./pages/LoginPage/Login";
 import Register from "./pages/RegisterPage/Register";
 import AdminDashBoard from "./pages/AdminDashboard/AdminDashboard";
+import ProfilePage from "./pages/ProfilePage/ProfilePage";
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
         <Route path="/user-booking-page" element={<UserBookingPage />} />
         <Route path="/" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/profile-page" element={<ProfilePage />} />
         {/* <Route path="/" element={<AdminDashBoard />} /> */}
       </Routes>
     </Router>

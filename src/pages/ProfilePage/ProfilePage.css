@@ -1,0 +1,119 @@
+.profile-page {
+    background-color: #F1FCF2;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-page-heading-div {
+    width: 80%;
+}
+
+.profile-page-heading {
+    font-size: 18pt;
+    font-weight: 100;
+    color: #555;
+}
+
+.profile-page-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    width: 80%;
+    height: 400px;
+    align-self: center;
+    border-radius: 10px;
+    
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.05),  /* Bottom-right */
+                -4px -4px 4px rgba(0, 0, 0, 0.05), /* Top-left */
+                4px -4px 4px rgba(0, 0, 0, 0.05),  /* Top-right */
+                -4px 4px 4px rgba(0, 0, 0, 0.05);  /* Bottom-left */
+
+    padding: 40px;
+    padding-left: 120px;
+    border-bottom: 1px solid gray;
+}
+
+.profile-page-edit-button {
+    background-color: green;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 2px;
+    margin-left: 20px;
+}
+
+#profile-page-cancel-button {
+    background-color: red;
+}
+
+.profile-page-buttons {
+    align-self: flex-end;
+}
+
+.profile-page-name-and-dob-div {
+    display: flex;
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.profile-page-label {
+    color: #555;
+    font-size: 10pt;
+    margin: 0px;
+}
+
+.profile-page-text {
+    font-weight: bold;
+    font-size: 15pt;
+    margin: 0px;
+    border: none;
+}
+
+.spacer {
+    flex: 1;
+}
+
+.profile-page-gender-div-wrapper {
+    display: flex;
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.profile-page-gender-radios {
+    margin-top: 10px;
+}
+
+.profile-page-gender {
+    margin-right: 10px;
+}
+
+.profile-page-bottom-part {
+    width: 100%;
+    position: relative;
+    border-top: 1px solid gray;
+    padding-top: 40px;
+}
+
+.profile-page-email-and-phone-div, .profile-page-userid-and-pass-div {
+    display: flex;
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.profile-page-contact-details {
+    position: absolute;
+    top: 0px;
+    left: 40%;
+    transform: translateY(-110%);
+    background-color: white;
+    padding: 0px 20px;
+    color: #555;
+    font-weight: 100;
+}
+
+#profile-page-date {
+    width: 260px;
+}

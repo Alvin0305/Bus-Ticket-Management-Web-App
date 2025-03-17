@@ -4,9 +4,19 @@ import SearchArea from "./components/SearchArea";
 import "./LandingPage.css";
 
 function LandingPage() {
+  const userData = {
+    name: "Alvin A S",
+    gender: "M",
+    email: "alvinanildas@gmail.com",
+    password: "abcd1234",
+    userID: "alvin07",
+    phone: "8086290149",
+    DOB: new Date().toISOString().split("T")[0],
+  };
+
   return (
     <div>
-      <TopBar></TopBar>
+      <TopBar user={userData}></TopBar>
       <SearchArea></SearchArea>
       <div className="landing-page-contents">
         <h1 className="landing-page-heading">BOOK BUS TICKET ONLINE</h1>

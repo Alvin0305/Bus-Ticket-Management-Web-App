@@ -1,15 +1,20 @@
-import { BusFront, Headphones, LogOut } from "lucide-react";
+import { User2, BusFront, Headphones, LogOut } from "lucide-react";
 import "./TopBar.css";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
-function handleHelp() {}
-
-function TopBar() {
+function TopBar({ user }) {
 
   const navigate = useNavigate();
-  function handleLogout() {
+  
+  const handleLogout = () => {
     navigate("/");
   }
+
+  const handleProfile = () => {
+    navigate("/profile-page", {state: {user: user}});
+  }
+
+  function handleHelp() {}
 
   return (
     <div className="landing-page-top-bar">
@@ -22,6 +27,9 @@ function TopBar() {
         <button className="landing-page-logout-button" onClick={handleLogout}>
           <LogOut className="landing-page-logout-icon"></LogOut>
           Log Out
+        </button>
+        <button className="landing-page-profile-button" onClick={handleProfile}>
+          <User2></User2>
         </button>
       </div>
     </div>
