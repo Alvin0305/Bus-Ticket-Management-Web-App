@@ -2,9 +2,14 @@ import { XCircle } from "lucide-react";
 import Seats from "./Seats";
 import "./BusDetails.css";
 import { useState } from "react";
+import axios from "axios";
 
 function BusDetails({ bus, onClose }) {
+
+  const BACKEND_URL = "https://localhost:5000";
+
   const getBookedSeats = () => {
+    
     // replace with corresponding API call to get the seats booked in this bus
     return [];
   };
@@ -12,9 +17,23 @@ function BusDetails({ bus, onClose }) {
   const [selectedSeats, setSelectedSeats] = useState([]);
   const [bookedSeats, setBookedSeats] = useState(getBookedSeats());
 
-  const onClick = () => {
-    // add API call for adding selectedSeats to the bookedSeats list
+  const onClick = async () => {
     setBookedSeats([...bookedSeats, ...selectedSeats]);
+
+    try {
+      const response = await axios.post(`${BACKEND_URL}/api/user-booking-page`, {
+        bus, 
+        selectedSeats, 
+        bookingDate: new Date(),
+      });
+      if (response.status === 200) {
+        alert("Booking succesful");
+      }
+    } catch(e) {
+      console.log("bus ticker booking error");
+    }
+    
+    // add API call for adding selectedSeats to the bookedSeats list
   };
 
   return (
