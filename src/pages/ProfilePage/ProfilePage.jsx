@@ -13,8 +13,8 @@ function ProfilePage() {
   const [gender, setGender] = useState(user.gender);
   const [email, setEmail] = useState(user.email);
   const [phone, setPhone] = useState(user.phone);
-  const [userID, setUserID] = useState(user.userID);
   const [password, setPassword] = useState(user.password);
+  const [confirmPassword, setConfirmPassword] = useState(user.password);
 
   const [editable, setEditable] = useState(false);
 
@@ -23,7 +23,6 @@ function ProfilePage() {
   const copyGender = user.gender;
   const copyEmail = user.email;
   const copyPhone = user.phone;
-  const copyUserID = user.userID;
   const copyPassword = user.password;
 
   const onEdit = () => {
@@ -37,14 +36,25 @@ function ProfilePage() {
     setGender(copyGender);
     setEmail(copyEmail);
     setPhone(copyPhone);
-    setUserID(copyUserID);
     setPassword(copyPassword);
   };
 
   const onSave = () => {
+    if (password === confirmPassword) {
+
+    }
     // add API call for editing the user details here
+
     navigate("/landing-page");
   };
+
+  const onDelete = () => {
+    if (window.confirm("Are you sure you want to delete your account? This action cannot be undone")) {
+      console.log("Account deleted");
+
+      // enter the code for deleting the account from the database
+    }
+  }
 
   return (
     <div className="profile-page">
@@ -77,7 +87,11 @@ function ProfilePage() {
           <div className="profile-page-name-div">
             <h3 className="profile-page-label">YOUR NAME</h3>
             <input
-              className="profile-page-text"
+              className={`profile-page-text ${
+                editable
+                  ? "profile-page-editable-text"
+                  : "profile-page-non-editable-text"
+              }`}
               placeholder={user.name}
               type="username"
               value={username}
@@ -91,7 +105,11 @@ function ProfilePage() {
           <div className="profile-page-dob-div">
             <h3 className="profile-page-label">DATE OF BIRTH</h3>
             <input
-              className="profile-page-text"
+              className={`profile-page-text ${
+                editable
+                  ? "profile-page-editable-text"
+                  : "profile-page-non-editable-text"
+              }`}
               placeholder={user.DOB}
               type="date"
               value={dob}
@@ -105,26 +123,16 @@ function ProfilePage() {
           <div className="spacer"></div>
         </div>
         <div className="profile-page-userid-and-pass-div">
-          <div className="profile-page-userid-div">
-            <h3 className="profile-page-label">USER ID</h3>
-            <input
-              className="profile-page-text"
-              placeholder={user.userID}
-              type="username"
-              value={userID}
-              onChange={(e) => {
-                setUserID(e.target.value);
-              }}
-              disabled={!editable}
-            ></input>
-          </div>
-          <div className="spacer"></div>
           <div className="profile-page-pass-div">
             <h3 className="profile-page-label">PASSWORD</h3>
             <input
-              className="profile-page-text"
+              className={`profile-page-text ${
+                editable
+                  ? "profile-page-editable-text"
+                  : "profile-page-non-editable-text"
+              }`}
               placeholder={user.password}
-              type="username"
+              type={editable ? "username" : "password"}
               value={password}
               onChange={(e) => {
                 setPassword(e.target.value);
@@ -132,6 +140,25 @@ function ProfilePage() {
               disabled={!editable}
             ></input>
           </div>
+          <div className="spacer"></div>
+          {editable ? <div className="profile-page-pass-div">
+            <h3 className="profile-page-label">CONFIRM PASSWORD</h3>
+            <input
+              className={`profile-page-text ${
+                editable
+                  ? "profile-page-editable-text"
+                  : "profile-page-non-editable-text"
+              }`}
+              placeholder={user.password}
+              type="username"
+              value={confirmPassword}
+              onChange={(e) => {
+                setConfirmPassword(e.target.value);
+              }}
+              disabled={!editable}
+            ></input>
+          </div> : null}
+          
           <div className="spacer"></div>
         </div>
         <div className="profile-page-gender-div-wrapper">
@@ -168,7 +195,11 @@ function ProfilePage() {
             <div className="profile-page-email-div">
               <h3 className="profile-page-label">EMAIL</h3>
               <input
-                className="profile-page-text"
+                className={`profile-page-text ${
+                  editable
+                    ? "profile-page-editable-text"
+                    : "profile-page-non-editable-text"
+                }`}
                 placeholder={user.email}
                 type="email"
                 value={email}
@@ -182,7 +213,11 @@ function ProfilePage() {
             <div className="profile-page-phone-div">
               <h3 className="profile-page-label">MOBILE NUMBER</h3>
               <input
-                className="profile-page-text"
+                className={`profile-page-text ${
+                  editable
+                    ? "profile-page-editable-text"
+                    : "profile-page-non-editable-text"
+                }`}
                 placeholder={user.phone}
                 type="tel"
                 value={phone}
@@ -194,6 +229,10 @@ function ProfilePage() {
             </div>
             <div className="spacer"></div>
           </div>
+        </div>
+        <div className="profile-page-spacer-delete">
+          <div className="spacer"></div>
+          <button className="profile-page-delete-button" onClick={onDelete}>DELETE</button>
         </div>
       </div>
     </div>

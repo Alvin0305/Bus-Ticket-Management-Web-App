@@ -3,7 +3,7 @@ import { ArrowLeftRight, Calendar } from "lucide-react";
 import { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 
-function SearchArea() {
+function SearchArea({ user }) {
   const dateInputRef = useRef(null);
   const navigate = useNavigate();
   const [from, setFrom] = useState("Kozhikode");
@@ -47,7 +47,7 @@ function SearchArea() {
   const navigateToBookingPage = () => {
     if (isValidArguments()) {
       navigate("/user-booking-page", {
-        state: { from: from, to: to, date: selectedDate },
+        state: { from: from, to: to, date: selectedDate, user: user },
       });
     } else {
       console.log("cannot navigate");

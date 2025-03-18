@@ -1,0 +1,58 @@
+.user-booking-page-top-bar {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    margin: 0px 0px;
+}
+
+.user-booking-page-bus-icon {
+    color: red;
+    margin-left: 10px;
+}
+
+.user-booking-page-headphone-log-out {
+    display: flex;
+    justify-content: space-between;
+}
+
+.user-booking-page-headphone-icon, .user-booking-page-logout-icon {
+    margin-right: 10px;
+}
+
+.user-booking-page-profile-button {
+    border: none;
+    background-color: transparent;
+    border-radius: 40px;
+    padding: 20px;
+}
+
+.user-booking-page-profile-button:hover {
+    background-color: #ddd;
+}
+
+.user-booking-page-profile-button:active {
+    background-color: #aaa;
+    color: white;
+}
+
+.user-booking-page-headphone-button, .user-booking-page-logout-button {
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    border: none;
+    border-radius: 5px;
+    padding: 0px 15px;
+    font-size: 15pt;
+    cursor: pointer;
+}
+
+.user-booking-page-headphone-button:hover, .user-booking-page-logout-button:hover {
+    background-color: #ddd;
+}
+
+.user-booking-page-headphone-button:active, .user-booking-page-logout-button:active {
+    background-color: #aaa;
+    color: white;
+}
+

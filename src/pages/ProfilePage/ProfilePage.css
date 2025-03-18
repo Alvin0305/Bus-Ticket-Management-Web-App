@@ -7,7 +7,7 @@
 }
 
 .profile-page-heading-div {
-    width: 80%;
+    width: 80vw;
 }
 
 .profile-page-heading {
@@ -22,7 +22,6 @@
     align-items: center;
     background-color: white;
     width: 80%;
-    height: 400px;
     align-self: center;
     border-radius: 10px;
     
@@ -43,10 +42,12 @@
     padding: 10px 20px;
     border-radius: 2px;
     margin-left: 20px;
+    cursor: pointer;
 }
 
 #profile-page-cancel-button {
     background-color: red;
+    cursor: pointer;
 }
 
 .profile-page-buttons {
@@ -66,14 +67,23 @@
 }
 
 .profile-page-text {
+    all: unset;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #555;
     font-weight: bold;
     font-size: 15pt;
     margin: 0px;
     border: none;
 }
 
+
+.profile-page-editable-text {
+    border-bottom: 1px solid gray;
+}
+
 .spacer {
     flex: 1;
+    /* background-color: red; */
 }
 
 .profile-page-gender-div-wrapper {
@@ -116,4 +126,18 @@
 
 #profile-page-date {
     width: 260px;
+}
+
+.profile-page-spacer-delete {
+    display: flex;
+    width: 100%
+}
+
+.profile-page-delete-button {
+    background-color: red;
+    padding: 10px 20px;
+    color: white;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
 }

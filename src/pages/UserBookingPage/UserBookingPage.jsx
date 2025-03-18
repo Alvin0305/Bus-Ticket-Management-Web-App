@@ -4,10 +4,11 @@ import Filters from "./components/Filters";
 import "./UserBookingPage.css";
 import { useLocation, useNavigate } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
+import TopBar from "./components/TopBar";
 
 function UserBookingPage() {
   const location = useLocation();
-  const {from, to, date} = location.state || {};
+  const {from, to, date, user} = location.state || {};
 
   const formatedDate = date.toLocaleDateString("en-GB", {
     day: "2-digit",
@@ -164,6 +165,7 @@ function UserBookingPage() {
 
   return (
     <div className="user-booking-page">
+      <TopBar user={user}></TopBar>
       <div className="user-booking-page-heading">
         <span className="bus-ticket-heading">Bus Ticket &gt; </span>{" "}
         <span className="from-to-heading">

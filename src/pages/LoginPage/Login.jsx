@@ -10,11 +10,21 @@ const Login = () => {
 
   // const BACKEND_URL = "https://your-backend.onrender.com";
 
+  const user = {
+    name: "Alvin A S",
+    gender: "M",
+    email: "alvinanildas@gmail.com",
+    password: "abcd1234",
+    userID: "alvin07",
+    phone: "8086290149",
+    DOB: new Date().toISOString().split("T")[0],
+  };
+
   const handleLogin = async () => {
     try {
       // const response = await axios.post(`${BACKEND_URL}/api/url/shorten`, { url });
       // if (response.status === 200) {
-      navigate("/landing-page");
+      navigate("/landing-page", {state: {user: user}});
       // }
     } catch (error) {
       alert("Invalid credentials");

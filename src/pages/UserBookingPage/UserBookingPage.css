@@ -3,7 +3,10 @@
 }
 
 .user-booking-page-heading {
+    border-top: 1px solid gray;
+    padding-top: 20px;
     margin-bottom: 20px;
+    margin-right: 10px;
 }
 
 .filters-and-buses{
@@ -71,6 +74,7 @@
     border-radius: 2px;
     background-color: #fff;
     color: gray;
+    cursor: pointer;
 }
 
 .modify-button:hover {

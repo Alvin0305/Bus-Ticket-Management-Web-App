@@ -2,22 +2,17 @@ import { Headphones, LogOut, ArrowLeftRight, BusFront } from "lucide-react";
 import TopBar from "./components/TopBar";
 import SearchArea from "./components/SearchArea";
 import "./LandingPage.css";
+import { useState } from "react";
+import { useLocation } from "react-router-dom";
 
 function LandingPage() {
-  const userData = {
-    name: "Alvin A S",
-    gender: "M",
-    email: "alvinanildas@gmail.com",
-    password: "abcd1234",
-    userID: "alvin07",
-    phone: "8086290149",
-    DOB: new Date().toISOString().split("T")[0],
-  };
+  const location = useLocation();
+  const { user } = location.state || {};
 
   return (
     <div>
-      <TopBar user={userData}></TopBar>
-      <SearchArea></SearchArea>
+      <TopBar user={user}></TopBar>
+      <SearchArea user={user}></SearchArea>
       <div className="landing-page-contents">
         <h1 className="landing-page-heading">BOOK BUS TICKET ONLINE</h1>
         <p className="landing-page-text">

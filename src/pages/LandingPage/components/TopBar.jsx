@@ -11,6 +11,7 @@ function TopBar({ user }) {
   }
 
   const handleProfile = () => {
+    console.log("in top bar: " , user);
     navigate("/profile-page", {state: {user: user}});
   }
 
