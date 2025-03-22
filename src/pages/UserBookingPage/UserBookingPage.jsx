@@ -190,7 +190,7 @@ function UserBookingPage() {
       <div className="booking-page">
         <div className="filters-and-buses">
           <Filters setBuses={setBuses}></Filters>
-          <Buses buses={buses} user={user}></Buses>
+          <Buses buses={buses} user={user} from={from} to={to} date={date}></Buses>
         </div>
       </div>
       <div className="landing-page-bottom-div" ref={helpRef}>

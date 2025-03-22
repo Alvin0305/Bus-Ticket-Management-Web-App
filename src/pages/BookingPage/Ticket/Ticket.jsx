@@ -1,39 +1,45 @@
 import "./Ticket.css";
 
 function Ticket({ bus, selectedSeats, user }) {
+  const getSeats = () => {
+    return selectedSeats.join(", "); // Simplified joining of seats
+  };
 
-    const getSeats = () => {
-        var seats = "" + selectedSeats[0];
-        for (var i = 1; i < selectedSeats.length; i++) {
-            seats = seats + ", " + selectedSeats[i];
-        }
-        return seats;
-    }
+  return (
+    <div className="booking-ticket">
+      <div className="design-left1"></div>
+      <div className="design-left2"></div>
+      <div className="design-right1"></div>
+      <div className="design-right2"></div>
+      <div className="booking-ticket-container">
+        <div className="booking-ticket-left">
+          <div className="booking-ticket-top">
+            <h2 className="booking-ticket-date">
+              {new Date().toISOString().split("T")[0]}
+            </h2>
+            <h2 className="booking-ticket-departure-time">
+              {bus.departureTime}
+            </h2>
+          </div>
 
-    return (
-        <div className="booking-ticket">
-            <div className="booking-ticket-container">
-                <h2 className="booking-ticket-date">{new Date().toISOString().split("T")[0]}</h2>
-                <div className="booking-ticket-left">
-                    <h2 className="booking-ticket-from-to">
-                        {bus.departure + " - " + bus.arrival}
-                    </h2>
-                    <h2 className="booking-ticket-label">BUS TICKET</h2>
-                    <div className="booking-ticket-fare-div">
-                        <h2 className="booking-ticket-fare">{bus.fare * selectedSeats.length}</h2>
-                        <h2 className="booking-ticket-seats">{getSeats()}</h2>
-                    </div>
-                    <h2 className="booking-tickets-name">{user.name}</h2>
-                </div>
-                <div className="booking-ticket-right">
-                    {bus.name}
-                </div>
-                <div>
-                    {bus.departureTime}
-                </div>
-            </div>
+          <h2 className="booking-ticket-from-to">
+            {bus.departure + " - " + bus.arrival}
+          </h2>
+          <h2 className="booking-ticket-label">BUS TICKET</h2>
+          <div className="booking-ticket-fare-div">
+            <h2 className="booking-ticket-fare">
+              {"₹ " + bus.fare * selectedSeats.length}
+            </h2>
+            <h2 className="booking-ticket-seats">{"Seats: " + getSeats()}</h2>
+          </div>
+          <h2 className="booking-ticket-username">{user.name}</h2>
         </div>
-    );
+        <div className="booking-ticket-right">
+          <h2 className="booking-ticket-name">{bus.name}</h2>
+        </div>
+      </div>
+    </div>
+  );
 }
 
 export default Ticket;

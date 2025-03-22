@@ -1,3 +1,104 @@
 .booking-ticket {
-    background-color: orangered;
+    position: relative;
+    padding: 20px 70px;
+    display: flex;
+    background-color: #CD853F;
+    border-left: 10px dotted white;
+    border-right: 10px dotted white;
+}
+
+.booking-ticket-container {
+    display: flex;
+    align-items: center;
+    border: 4px solid black;
+    width: 100%;
+}
+
+.booking-ticket-top {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.booking-ticket-name {
+    writing-mode: sideways-lr;
+    text-align: center;
+    padding: 20px;
+    margin: 0;
+}
+
+.booking-ticket-username {
+    margin: 0px;
+}
+
+.booking-ticket-fare-div {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.booking-ticket-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-right: 5px solid black;
+    padding: 20px;
+}
+
+.booking-ticket-right {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+}
+
+.booking-ticket-from-to {
+    width: 100%;
+    padding: 0px -20px;
+    text-align: center;
+}
+
+.booking-ticket-fare-div {
+    margin: 0px 20px;
+}
+
+.booking-ticket-label {
+    font-size: xx-large;
+    margin: 0px;
+    width: 100%;
+    padding: 20px 0px;
+    text-align: center;
+}
+
+.design-left1, .design-left2, .design-right1, .design-right2 {
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    border-radius: 50px;
+    background-color: white;
+}
+
+.design-left1 {
+    top: 15%;
+    left: 0;
+    transform: translateX(-60%);
+}
+
+.design-left2 {
+    bottom: 15%;
+    left: 0;
+    transform: translateX(-60%);
+}
+
+.design-right1 {
+    top: 15%;
+    right: 0;
+    transform: translateX(60%);
+}
+
+.design-right2 {
+    bottom: 15%;
+    right: 0;
+    transform: translateX(60%);
 }

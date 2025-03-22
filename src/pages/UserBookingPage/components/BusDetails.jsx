@@ -5,10 +5,8 @@ import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-function BusDetails({ bus, onClose, user }) {
-
+function BusDetails({ bus, onClose, user, from, to, date }) {
   const getBookedSeats = () => {
-    
     // replace with corresponding API call to get the seats booked in this bus
     return [];
   };
@@ -19,8 +17,20 @@ function BusDetails({ bus, onClose, user }) {
 
   const onClick = () => {
     setBookedSeats([...bookedSeats, ...selectedSeats]);
-    navigate("/booking-page", {state: {selectedSeats: selectedSeats, user: user, bus: bus}})
-    
+    if (selectedSeats.length != 0) {
+      navigate("/booking-page", {
+        state: {
+          selectedSeats: selectedSeats,
+          user: user,
+          bus: bus,
+          bookedSeats: bookedSeats,
+          from: from, 
+          to: to, 
+          date: date
+        },
+      });
+    }
+
     // add API call for adding selectedSeats to the bookedSeats list
   };
 

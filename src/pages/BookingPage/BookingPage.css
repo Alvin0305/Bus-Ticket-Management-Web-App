@@ -1,0 +1,72 @@
+.booking-ticket-page {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #F1FCF2;
+    height: 100vh;
+    width: 100vw;
+}
+
+.booking-page-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 40px;
+    padding-left: 50px;
+    /* width: 60%; */
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.05),  
+                -4px -4px 4px rgba(0, 0, 0, 0.05),
+                4px -4px 4px rgba(0, 0, 0, 0.05), 
+                -4px 4px 4px rgba(0, 0, 0, 0.05); 
+}
+
+.booking-page-button {
+    background-color: green;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16pt;
+    margin-left: 20px;
+    cursor: pointer;
+    justify-self: end;
+    align-self: flex-end;
+}
+
+.booking-page-button:hover {
+    background-color: #45A049;
+}
+
+.booking-page-button:active {
+    background-color: #3D8B40;
+}
+
+#booking-page-cancel-button {
+    background-color: red;
+}
+
+#booking-page-cancel-button:hover {
+    background-color: #FE7E7E;
+}
+
+#booking-page-cancel-button:active {
+    background-color: #A44E4E;
+}
+
+.booking-page-buttons {
+    align-self: flex-end;
+    margin-left: 70px;
+    margin-bottom: 30px;
+}
+
+.booking-page-right-part {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    align-items: center;
+    margin-left: 70px;
+}
