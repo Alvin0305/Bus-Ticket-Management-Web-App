@@ -162,7 +162,7 @@ function UserBookingPage() {
   const helpRef = useRef(null);
 
   const gotoLoginPage = () => {
-    navigate("/landing-page");
+    navigate("/landing-page", {state: {user: user}});
   }
 
   return (
