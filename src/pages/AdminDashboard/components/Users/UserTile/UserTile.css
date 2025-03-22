@@ -1,0 +1,58 @@
+.users-session-wrapper {
+    
+}
+
+.users-tile-session {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    padding-left: 40px;
+    border: 1px solid gray;
+    margin-bottom: 25px;
+    border-radius: 5px;
+}
+
+.users-session-username {
+    font-size: 30pt;
+}
+
+.users-session-id, .users-session-phone, .users-session-dob, .users-session-username, .users-session-email {
+    margin: 0px;
+}
+
+.users-session-details {
+    padding: 10px 50px;
+    width: 100%;
+}
+
+.users-session-horizontal-div {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.users-session-button {
+    background-color: #F46E6E;
+    padding: 10px 20px;
+    border: none;
+    color: white;
+    justify-self: flex-end;
+    align-self: flex-end;
+}
+
+.users-session-button:hover {
+    background-color: #FE7E7E;
+}
+
+.users-session-button:active {
+    background-color: #A44E4E;
+}
+
+.users-session-button-div {
+    margin-top: 10px;
+    display: flex;
+}
+
+.users-session-spacer {
+    flex: 1;
+}

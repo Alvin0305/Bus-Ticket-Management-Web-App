@@ -1,0 +1,32 @@
+.bookings-session-ticket-details {
+    background-color: white;
+    border: 1px solid gray;
+    border-top: none;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: -20px;
+    margin-bottom: 20px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.bookings-session-seatno-div, .bookings-session-busid-div, .bookings-session-userid-div, .bookings-session-price-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.bookings-session-seatno, .bookings-session-busid, .bookings-session-userid, .bookings-session-price {
+    margin: 0px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 15pt;
+}
+
+.bookings-session-seatno-label, .bookings-session-busid-label, .bookings-session-userid-label, .bookings-session-price-label {
+    margin: 0px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 15pt;
+}

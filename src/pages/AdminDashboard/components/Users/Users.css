@@ -1,0 +1,14 @@
+.users-session {
+    display: flex;
+    width: 100vw;
+}
+
+.users-session-left-part {
+    width: 50%;
+    margin: 0px 15px 0px 25px;
+}
+
+.users-session-right-part {
+    width: 50%;
+    margin: 0px 25px 0px 15px;
+}

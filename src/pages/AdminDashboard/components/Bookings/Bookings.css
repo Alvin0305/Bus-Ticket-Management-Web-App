@@ -1,0 +1,17 @@
+.bookings-session {
+    border-radius: 10px;
+    display: flex;
+    width: 100vw;
+}
+
+.bookings-session-left-part {
+    width: 50%;
+    margin: 20px;
+    margin-right: 10px;
+}
+
+.bookings-session-right-part {
+    width: 50%;
+    margin: 20px;
+    margin-left: 10px;
+}
