@@ -2,7 +2,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px;
+    padding: 10px 30px;
     margin-bottom: 20px;
     background-color: white;
     border-radius: 5px;
@@ -14,7 +14,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px;
+    padding: 10px 30px;
     margin-bottom: 20px;
     background-color: white;
     border-radius: 5px;
@@ -36,11 +36,17 @@
     margin: 0px;
     font-family: Arial, Helvetica, sans-serif;
     /* color: white; */
+    color: #555;
+}
+
+.bookings-session-ticketid-label {
+    color: black;
 }
 
 .bookings-session-ticket-from{
     /* color: white; */
     font-family: Arial, Helvetica, sans-serif;
+    color: #555;
 }
 
 .bookings-session-ticket-date {

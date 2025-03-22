@@ -12,12 +12,6 @@ function AdminDashboard({ user }) {
 
     const [selectedTab, setSelectedTab] = useState("BUSES");
 
-    const navigate = useNavigate();
-
-    const onAdd = () => {
-        navigate("/add-bus-page");
-    }
-
     const getSelectedTab = () => {
         if (selectedTab === "BUSES") return <Buses></Buses>
         if (selectedTab === "USERS") return <Users></Users>
@@ -29,7 +23,6 @@ function AdminDashboard({ user }) {
         <TopBar user={user}></TopBar>
         <NavigationSession setSelectedTab={setSelectedTab} selectedTab={selectedTab}></NavigationSession>
         {getSelectedTab()}
-        <button className="admin-dashboard-add-button" onClick={onAdd}>+</button>
     </div>;
 }
 

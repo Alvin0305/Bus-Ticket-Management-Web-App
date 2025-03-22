@@ -32,7 +32,7 @@ function TicketTile({ ticket }) {
           <h3 className="bookings-session-ticketid">{ticket.ticketID}</h3>
         </div>
       </div>
-      {showDetails && <TicketDetails ticket={ticket}></TicketDetails>}
+      {showDetails && <TicketDetails ticket={ticket} setShowDetails={setShowDetails}></TicketDetails>}
     </div>
   );
 }

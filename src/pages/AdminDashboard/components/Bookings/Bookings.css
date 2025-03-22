@@ -4,14 +4,21 @@
     width: 100vw;
 }
 
+.bookings-session-middle-part {
+    width: 33%;
+    margin: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
 .bookings-session-left-part {
-    width: 50%;
+    width: 33%;
     margin: 20px;
     margin-right: 10px;
 }
 
 .bookings-session-right-part {
-    width: 50%;
+    width: 33%;
     margin: 20px;
     margin-left: 10px;
 }

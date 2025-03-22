@@ -141,14 +141,21 @@ function Bookings() {
     <div className="bookings-session">
       <div className="bookings-session-left-part">
         {getAllTickets().map((ticket, index) => {
-          if (index % 2 == 0) {
+          if (index % 3 == 0) {
+            return <TicketTile ticket={ticket} key={index}></TicketTile>;
+          }
+        })}
+      </div>
+      <div className="bookings-session-middle-part">
+      {getAllTickets().map((ticket, index) => {
+          if (index % 3 == 1) {
             return <TicketTile ticket={ticket} key={index}></TicketTile>;
           }
         })}
       </div>
       <div className="bookings-session-right-part">
         {getAllTickets().map((ticket, index) => {
-          if (index % 2 == 1) {
+          if (index % 3 == 2) {
             return <TicketTile ticket={ticket} key={index}></TicketTile>;
           }
         })}

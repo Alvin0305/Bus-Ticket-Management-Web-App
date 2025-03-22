@@ -2,7 +2,7 @@
     background-color: white;
     border: 1px solid gray;
     border-top: none;
-    padding: 10px;
+    padding: 10px 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -10,6 +10,7 @@
     margin-bottom: 20px;
     border-bottom-right-radius: 5px;
     border-bottom-left-radius: 5px;
+    cursor: pointer;
 }
 
 .bookings-session-seatno-div, .bookings-session-busid-div, .bookings-session-userid-div, .bookings-session-price-div {
@@ -22,11 +23,10 @@
 .bookings-session-seatno, .bookings-session-busid, .bookings-session-userid, .bookings-session-price {
     margin: 0px;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-size: 15pt;
+    color: #555;
 }
 
 .bookings-session-seatno-label, .bookings-session-busid-label, .bookings-session-userid-label, .bookings-session-price-label {
     margin: 0px;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-size: 15pt;
 }

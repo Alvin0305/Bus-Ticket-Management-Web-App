@@ -1,19 +1,17 @@
-import { Bus, Currency, Ticket, User } from "lucide-react";
+import { Bus, Ticket, User } from "lucide-react";
 import "./NavigationButton.css";
-import Buses from "../../Buses/Buses";
-import Users from "../../Users/Users";
-import Bookings from "../../Bookings/Bookings";
-import Revenue from "../../Revenue/Revenue";
+import { GiCash } from "react-icons/gi";
 
 function NavigationButton({ name, setSelectedTab, selectedTab }) {
+  
   const getIcon = () => {
     if (name === "BUSES")
-      return <Bus className="admin-dashboard-nav-button-icon" size={40} />;
+      return <Bus className="admin-dashboard-nav-button-icon" size={50} />;
     if (name === "USERS")
-      return <User className="admin-dashboard-nav-button-icon" size={40} />;
+      return <User className="admin-dashboard-nav-button-icon" size={50} />;
     if (name === "BOOKINGS")
-      return <Ticket className="admin-dashboard-nav-button-icon" size={40} />;
-    return <Currency className="admin-dashboard-nav-button-icon" size={40} />;
+      return <Ticket className="admin-dashboard-nav-button-icon" size={50} />;
+    return <GiCash className="admin-dashboard-nav-button-icon" size={50} />;
   };
   
   return (

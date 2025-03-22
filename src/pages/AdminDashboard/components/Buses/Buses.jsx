@@ -2,6 +2,7 @@ import { useState } from "react";
 import Filters from "../../../UserBookingPage/components/Filters";
 import BusSession from "./components/BusSession";
 import "./Buses.css";
+import { useNavigate } from "react-router-dom";
 
 function Buses() {
   const getBuses = () => {
@@ -143,11 +144,18 @@ function Buses() {
 
   const [buses, setBuses] = useState(getBuses());
 
+  const navigate = useNavigate();
+
+  const onAdd = () => {
+      navigate("/add-bus-page");
+  }
+
   return (
     <div className="admin-dashboard-buses">
       <div className="admin-dashboard-buses-filters-and-buses">
         <Filters setBuses={setBuses}></Filters>
         <BusSession buses={buses}></BusSession>
+        <button className="admin-dashboard-add-button" onClick={onAdd}>+</button>
       </div>
     </div>
   );
