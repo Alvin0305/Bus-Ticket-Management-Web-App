@@ -3,10 +3,9 @@ import Seats from "./Seats";
 import "./BusDetails.css";
 import { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
-function BusDetails({ bus, onClose }) {
-
-  const BACKEND_URL = "https://localhost:5000";
+function BusDetails({ bus, onClose, user }) {
 
   const getBookedSeats = () => {
     
@@ -16,22 +15,11 @@ function BusDetails({ bus, onClose }) {
 
   const [selectedSeats, setSelectedSeats] = useState([]);
   const [bookedSeats, setBookedSeats] = useState(getBookedSeats());
+  const navigate = useNavigate();
 
-  const onClick = async () => {
+  const onClick = () => {
     setBookedSeats([...bookedSeats, ...selectedSeats]);
-
-    try {
-      const response = await axios.post(`${BACKEND_URL}/api/user-booking-page`, {
-        bus, 
-        selectedSeats, 
-        bookingDate: new Date(),
-      });
-      if (response.status === 200) {
-        alert("Booking succesful");
-      }
-    } catch(e) {
-      console.log("bus ticker booking error");
-    }
+    navigate("/booking-page", {state: {selectedSeats: selectedSeats, user: user, bus: bus}})
     
     // add API call for adding selectedSeats to the bookedSeats list
   };

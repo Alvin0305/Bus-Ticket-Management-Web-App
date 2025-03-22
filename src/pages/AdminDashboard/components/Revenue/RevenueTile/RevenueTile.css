@@ -1,0 +1,21 @@
+.revenue-tile {
+    display: flex;
+    border: 1px solid gray;
+    width: 200px;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.revenue-tile-name {
+    font-size: 14pt;
+    margin: 0px;
+}
+
+.revenue-tile-value {
+    font-size: 18pt;
+    margin: 0px;
+    font-weight: bold;
+}

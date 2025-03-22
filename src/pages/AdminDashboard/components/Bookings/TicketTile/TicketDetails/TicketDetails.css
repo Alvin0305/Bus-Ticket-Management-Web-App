@@ -22,11 +22,9 @@
 
 .bookings-session-seatno, .bookings-session-busid, .bookings-session-userid, .bookings-session-price {
     margin: 0px;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     color: #555;
 }
 
 .bookings-session-seatno-label, .bookings-session-busid-label, .bookings-session-userid-label, .bookings-session-price-label {
     margin: 0px;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }

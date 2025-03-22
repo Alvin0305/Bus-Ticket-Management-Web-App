@@ -9,6 +9,7 @@ import AdminDashBoard from "./pages/AdminDashboard/AdminDashboard";
 import ProfilePage from "./pages/ProfilePage/ProfilePage";
 import EditBusPage from "./pages/EditBusPage/EditBusPage";
 import AddBusPage from "./pages/AddBusPage/AddBusPage";
+import BookingPage from "./pages/BookingPage/BookingPage";
 
 function App() {
 
@@ -27,12 +28,13 @@ function App() {
       <Routes>
         <Route path="/landing-page" element={<LandingPage />} />
         <Route path="/user-booking-page" element={<UserBookingPage />} />
-        {/* <Route path="/" element={<Login />} /> */}
+        <Route path="/" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/profile-page" element={<ProfilePage />} />
-        <Route path="/" element={<AdminDashBoard user={user}/>} />
+        <Route path="/admin-dashboard-page" element={<AdminDashBoard />} />
         <Route path="/edit-bus-page" element={<EditBusPage/>} />
         <Route path="/add-bus-page" element={<AddBusPage/>} />
+        <Route path="/booking-page" element={<BookingPage />} />
       </Routes>
     </Router>
   );

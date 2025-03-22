@@ -6,6 +6,7 @@ import "./Login.css";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [admin, setAdmin] = useState(false);
   const navigate = useNavigate();
 
   // const BACKEND_URL = "https://your-backend.onrender.com";
@@ -24,7 +25,11 @@ const Login = () => {
     try {
       // const response = await axios.post(`${BACKEND_URL}/api/url/shorten`, { url });
       // if (response.status === 200) {
-      navigate("/landing-page", {state: {user: user}});
+      if (admin) {
+        navigate("/admin-dashboard-page", { state: { user: user } });
+      } else {
+        navigate("/landing-page", { state: { user: user } });
+      }
       // }
     } catch (error) {
       alert("Invalid credentials");
@@ -56,6 +61,13 @@ const Login = () => {
             placeholder="Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+          />
+          <input
+            className="login-input"
+            type="checkbox"
+            placeholder="Admin"
+            value={false}
+            onChange={(e) => setAdmin(e.target.value)}
           />
           <button className="login-button" onClick={handleLogin}>
             LOG IN

@@ -1,24 +1,23 @@
-import { Menu, UserCircle2 } from "lucide-react";
+import { Bus, BusFront, LogOut, Menu, UserCircle2 } from "lucide-react";
 import "./TopBar.css";
 import { useNavigate } from "react-router-dom";
 
 function TopBar({ user }) {
+  const navigate = useNavigate();
 
-    const navigate = useNavigate();
-
-    const navigateToProfile = () => {
-        navigate("/profile-page", {state: {user: user}});
-    }
-
-    const showDashboard = () => {}
+  const navigateToProfile = () => {
+    navigate("/", { state: { user: user } });
+  };
 
   return (
     <div className="admin-dashboard-topbar">
-      <button className="admin-dashboard-topbar-button" onClick={showDashboard}>
-        <Menu size={40}></Menu>
-      </button>
-      <button className="admin-dashboard-topbar-button" onClick={navigateToProfile}>
-        <UserCircle2 size={40}></UserCircle2>
+      <BusFront size={60} color="#F46E6E"></BusFront>
+      <button
+        className="admin-dashboard-topbar-button"
+        onClick={navigateToProfile}
+      >
+        <LogOut size={24} className="admin-dashboard-button-icon"></LogOut>
+        LogOut
       </button>
     </div>
   );

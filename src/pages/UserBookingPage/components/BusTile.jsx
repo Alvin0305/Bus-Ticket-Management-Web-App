@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./BusTile.css";
 import BusDetails from "./BusDetails";
 
-function BusTile({ bus }) {
+function BusTile({ bus, user }) {
   const [showDetails, setShowDetails] = useState(false);
 
   const onClick = () => {
@@ -34,7 +34,7 @@ function BusTile({ bus }) {
         VIEW SEATS
       </button>
     </div>
-    {showDetails ? <BusDetails bus={bus} onClose={() => {setShowDetails(false)}}></BusDetails> : null}
+    {showDetails ? <BusDetails bus={bus} user={user} onClose={() => {setShowDetails(false)}}></BusDetails> : null}
   </div>;
 }
 

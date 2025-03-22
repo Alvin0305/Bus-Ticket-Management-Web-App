@@ -8,7 +8,7 @@ function NavigationSession({ setSelectedTab, selectedTab }) {
                 <NavigationButton name="BUSES" setSelectedTab={setSelectedTab} selectedTab={selectedTab}></NavigationButton>
                 <NavigationButton name="USERS" setSelectedTab={setSelectedTab} selectedTab={selectedTab}></NavigationButton>
                 <NavigationButton name="BOOKINGS" setSelectedTab={setSelectedTab} selectedTab={selectedTab}></NavigationButton>
-                <NavigationButton name="REVENUE" setSelectedTab={setSelectedTab} selectedTab={selectedTab}></NavigationButton>
+                <NavigationButton name="STATISTICS" setSelectedTab={setSelectedTab} selectedTab={selectedTab}></NavigationButton>
             </div>
         </div>
     </div>

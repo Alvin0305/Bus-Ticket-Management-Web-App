@@ -1,0 +1,18 @@
+.revenue-session {
+    padding: 40px;
+    padding-top: 0px;
+    display: flex;
+}
+
+.revenue-graphs-div {
+    width: 100%;
+    display: flex;
+}
+
+.revenue-graphs {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}

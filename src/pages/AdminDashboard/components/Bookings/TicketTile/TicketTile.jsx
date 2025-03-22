@@ -9,7 +9,8 @@ function TicketTile({ ticket }) {
     <div className="bookings-session-ticket-wrapper">
       <div
         className={!showDetails ? "bookings-session-ticket" : "bookings-session-ticket-clicked"}
-        onClick={() => setShowDetails(!showDetails)}
+        onMouseEnter={() => setShowDetails(true)}
+        onMouseLeave={() => setShowDetails(false)}
       >
         <div className="bookings-session-ticket-date-div">
           <h3 className="bookings-session-ticket-date">

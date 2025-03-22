@@ -7,7 +7,6 @@
     background: #565c63;
   
     place-items: center;
-    font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
     line-height: 1.5;
     font-weight: 400;
   
@@ -68,7 +67,6 @@
     background: #814cb2;
   }
   .register-head {
-    font-family: "Franklin Gothic Medium";
     font-size: 51px;
     margin-top: 50px;
     margin-bottom: 0px;

@@ -6,9 +6,11 @@ import Bookings from "./components/Bookings/Bookings";
 import Revenue from "./components/Revenue/Revenue";
 import Users from "./components/Users/Users";
 import "./AdminDashboard.css";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
-function AdminDashboard({ user }) {
+function AdminDashboard() {
+    const location = useLocation();
+    const { user } = location.state || {};
 
     const [selectedTab, setSelectedTab] = useState("BUSES");
 
