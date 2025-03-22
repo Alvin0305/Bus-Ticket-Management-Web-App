@@ -2,7 +2,7 @@ import { User2, BusFront, Headphones, LogOut } from "lucide-react";
 import "./TopBar.css";
 import { useLocation, useNavigate } from "react-router-dom";
 
-function TopBar({ user }) {
+function TopBar({ user, helpRef }) {
 
   const navigate = useNavigate();
   
@@ -15,7 +15,14 @@ function TopBar({ user }) {
     navigate("/profile-page", {state: {user: user}});
   }
 
-  function handleHelp() {}
+  const handleHelp = () => {
+    console.log("going to help");
+    if (helpRef?.current) {
+      helpRef.current.scrollIntoView({ behavior: "smooth" });
+    } else {
+      console.warn("error");
+    }
+  }
 
   return (
     <div className="landing-page-top-bar">

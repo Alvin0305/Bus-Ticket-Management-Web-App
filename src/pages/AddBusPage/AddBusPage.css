@@ -1,0 +1,130 @@
+.add-bus-page {
+    background-color: #F1FCF2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+}
+
+.add-bus-page-heading-div {
+    padding-top: 50px;
+    width: 80vw;
+}
+
+.add-bus-page-heading {
+    font-size: 18pt;
+    font-weight: 100;
+    color: #555;
+}
+
+.add-bus-page-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    width: 80%;
+    align-self: center;
+    border-radius: 10px;
+    
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.05),  /* Bottom-right */
+                -4px -4px 4px rgba(0, 0, 0, 0.05), /* Top-left */
+                4px -4px 4px rgba(0, 0, 0, 0.05),  /* Top-right */
+                -4px 4px 4px rgba(0, 0, 0, 0.05);  /* Bottom-left */
+
+    padding: 40px;
+    border-bottom: 1px solid gray;
+}
+
+.add-bus-page-edit-button {
+    background-color: green;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 2px;
+    /* margin-left: 20px; */
+    cursor: pointer;
+}
+
+#add-bus-page-cancel-button {
+    background-color: red;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+.add-bus-page-buttons {
+    align-self: flex-end;
+}
+
+.add-bus-page-label {
+    color: #555;
+    font-size: 10pt;
+    margin: 0px;
+}
+
+.add-bus-page-text {
+    all: unset;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #555;
+    font-weight: bold;
+    font-size: 15pt;
+    margin: 0px;
+    border: none;
+}
+
+
+.add-bus-page-editable-text {
+    border-bottom: 1px solid gray;
+}
+
+.add-bus-page-contents {
+    width: 100%;
+}
+
+.add-bus-page-content {
+    display: flex;
+    width: 100%;
+    justify-content: left;
+    padding: 20px 0px;
+}
+
+.add-bus-page-left-part {
+    margin: 20px;
+    width: 50%;
+    margin-right: 10px;
+}
+
+.add-bus-page-right-part {
+    margin: 20px;
+    margin-left: 10px;
+    width: 50%;
+}
+
+#add-bus-content-with-heading {
+    border-top: 1px solid gray; 
+}
+
+.add-bus-page-session-heading {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    transform: translateY(-125%);
+    background-color: white;
+    padding: 0px 20px;
+}
+
+.add-bus-page-content-wrapper {
+    position: relative;
+}
+
+.add-bus-page-fare-div {
+    padding-top: 20px;
+}
+
+.add-bus-page-delete-button {
+    padding: 10px 20px;
+    border: none;
+    background-color: red;
+    color: white;
+    align-self: flex-end;
+    cursor: pointer;
+}

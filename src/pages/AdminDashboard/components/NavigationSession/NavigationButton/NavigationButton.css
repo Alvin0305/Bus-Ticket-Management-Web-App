@@ -1,0 +1,35 @@
+.admin-dashboard-nav-button {
+    position: relative;
+    height: 200px;
+    width: 200px;
+    border: 1px solid gray;
+    border-radius: 10px;
+    padding: 10px 20px;
+    background-color: white;
+    cursor: pointer;
+}
+
+.admin-dashboard-nav-button:hover {
+    transform: scale(1.05);
+}
+
+.admin-dashboard-selected-nav-button {
+    background-color: #814CB2;
+    color: white;
+}
+
+#trial {
+    background-color: red;
+}
+
+.admin-dashboard-nav-button-name {
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+}
+
+.admin-dashboard-nav-button-icon {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import Buses from "./components/Buses";
 import Filters from "./components/Filters";
 import "./UserBookingPage.css";
@@ -159,13 +159,15 @@ function UserBookingPage() {
   const [buses, setBuses] = useState(getBuses());
   const navigate = useNavigate();
 
+  const helpRef = useRef(null);
+
   const gotoLoginPage = () => {
     navigate("/landing-page");
   }
 
   return (
     <div className="user-booking-page">
-      <TopBar user={user}></TopBar>
+      <TopBar user={user} helpRef={helpRef}></TopBar>
       <div className="user-booking-page-heading">
         <span className="bus-ticket-heading">Bus Ticket &gt; </span>{" "}
         <span className="from-to-heading">
@@ -190,6 +192,11 @@ function UserBookingPage() {
           <Filters setBuses={setBuses}></Filters>
           <Buses buses={buses}></Buses>
         </div>
+      </div>
+      <div className="landing-page-bottom-div" ref={helpRef}>
+        <p className="landing-page-bottom-part">
+          Ⓒ 2025 Redbus India Pvt Ltd. All rights reserved
+        </p>
       </div>
     </div>
   );

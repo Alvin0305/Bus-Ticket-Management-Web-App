@@ -2,16 +2,17 @@ import { Headphones, LogOut, ArrowLeftRight, BusFront } from "lucide-react";
 import TopBar from "./components/TopBar";
 import SearchArea from "./components/SearchArea";
 import "./LandingPage.css";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { useLocation } from "react-router-dom";
 
 function LandingPage() {
   const location = useLocation();
   const { user } = location.state || {};
+  const helpRef = useRef(null);
 
   return (
     <div>
-      <TopBar user={user}></TopBar>
+      <TopBar user={user} helpRef={helpRef}></TopBar>
       <SearchArea user={user}></SearchArea>
       <div className="landing-page-contents">
         <h1 className="landing-page-heading">BOOK BUS TICKET ONLINE</h1>
@@ -65,7 +66,7 @@ function LandingPage() {
           <h2 className="landing-page-faq-link">FAQs</h2>
         </a>
       </div>
-      <div className="landing-page-bottom-div">
+      <div className="landing-page-bottom-div" ref={helpRef}>
         <p className="landing-page-bottom-part">
           Ⓒ 2025 Redbus India Pvt Ltd. All rights reserved
         </p>

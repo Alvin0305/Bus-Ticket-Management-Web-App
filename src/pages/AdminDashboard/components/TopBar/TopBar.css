@@ -1,0 +1,23 @@
+.admin-dashboard-topbar {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+}
+
+.admin-dashboard-topbar-button {
+    background-color: transparent;
+    border: none;
+    padding: 10px;
+    border-radius: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.admin-dashboard-topbar-button:hover {
+    background-color: #ddd;
+}
+
+.admin-dashboard-topbar-button:active {
+    background-color: #bbb;
+}
