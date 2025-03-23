@@ -1,6 +1,7 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import "./AddBusPage.css";
+import TimePicker from "react-time-picker";
 
 function AddBusPage() {
   const navigate = useNavigate();
@@ -14,7 +15,7 @@ function AddBusPage() {
   const [fare, setFare] = useState();
 
   const onCancel = () => {
-    navigate("/");
+    navigate(-1);
   };
 
   const calculateTimeDifference = () => {

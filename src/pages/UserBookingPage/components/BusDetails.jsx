@@ -4,6 +4,7 @@ import "./BusDetails.css";
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import RouteSegments from "./RouteSegment/RouteSegments";
 
 function BusDetails({ bus, onClose, user, from, to, date }) {
   const getBookedSeats = () => {
@@ -14,6 +15,52 @@ function BusDetails({ bus, onClose, user, from, to, date }) {
   const [selectedSeats, setSelectedSeats] = useState([]);
   const [bookedSeats, setBookedSeats] = useState(getBookedSeats());
   const navigate = useNavigate();
+
+  const getRoutes = () => {
+    // replace with API call to get the route segment for the selected bus
+    return [
+      {
+        location: "Kozhikode", 
+        departure: new Date().toISOString().split("T")[1].slice(0, 8),
+        arrival: new Date().toISOString().split("T")[1].slice(0, 8)
+      }, 
+      {
+        location: "Malappuram", 
+        departure: new Date().toISOString().split("T")[1].slice(0, 8),
+        arrival: new Date().toISOString().split("T")[1].slice(0, 8)
+      }, 
+      {
+        location: "Thrissur", 
+        departure: new Date().toISOString().split("T")[1].slice(0, 8), 
+        arrival: new Date().toISOString().split("T")[1].slice(0, 8)
+      }, 
+      {
+        location: "Ernakulam", 
+        departure: new Date().toISOString().split("T")[1].slice(0, 8), 
+        arrival: new Date().toISOString().split("T")[1].slice(0, 8)
+      }, 
+      {
+        location: "Kottayam", 
+        departure: new Date().toISOString().split("T")[1].slice(0, 8), 
+        arrival: new Date().toISOString().split("T")[1].slice(0, 8)
+      }, 
+      {
+        location: "Alappuzha", 
+        departure: new Date().toISOString().split("T")[1].slice(0, 8), 
+        arrival: new Date().toISOString().split("T")[1].slice(0, 8)
+      }, 
+      {
+        location: "Kollam", 
+        departure: new Date().toISOString().split("T")[1].slice(0, 8), 
+        arrival: new Date().toISOString().split("T")[1].slice(0, 8)
+      }, 
+      {
+        location: "Thiruvananthapuram", 
+        departure: new Date().toISOString().split("T")[1].slice(0, 8), 
+        arrival: new Date().toISOString().split("T")[1].slice(0, 8)
+      }, 
+    ];
+  }
 
   const onClick = () => {
     setBookedSeats([...bookedSeats, ...selectedSeats]);
@@ -82,6 +129,7 @@ function BusDetails({ bus, onClose, user, from, to, date }) {
               BOOK TICKETS
             </button>
           </div>
+          <RouteSegments routes={getRoutes()} />
         </div>
       </div>
     </div>

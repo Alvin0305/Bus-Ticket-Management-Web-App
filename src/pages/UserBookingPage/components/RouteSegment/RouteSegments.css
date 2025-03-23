@@ -1,0 +1,16 @@
+.route-segment {
+    display: flex;
+    justify-content: space-between;
+}
+
+.route-segment-time, .route-segment-location {
+    font-size: 12pt;
+}
+
+.route-segment-time {
+    margin-left: 10px;
+}
+
+.route-segment-time-div {
+    display: flex;
+}

@@ -41,7 +41,7 @@ function ProfilePage() {
 
   const onSave = () => {
     if (password === confirmPassword) {
-
+      
     }
     // add API call for editing the user details here
 
