@@ -3,17 +3,16 @@ import "./TopBar.css";
 import { useLocation, useNavigate } from "react-router-dom";
 
 function TopBar({ user, helpRef }) {
-
   const navigate = useNavigate();
-  
+
   const handleLogout = () => {
     navigate("/");
-  }
+  };
 
   const handleProfile = () => {
-    console.log("in top bar: " , user);
-    navigate("/profile-page", {state: {user: user}});
-  }
+    console.log("in top bar: ", user);
+    navigate("/profile-page", { state: { user: user } });
+  };
 
   const handleHelp = () => {
     console.log("going to help");
@@ -22,7 +21,7 @@ function TopBar({ user, helpRef }) {
     } else {
       console.warn("error");
     }
-  }
+  };
 
   return (
     <div className="landing-page-top-bar">

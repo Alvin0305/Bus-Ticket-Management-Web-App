@@ -10,6 +10,7 @@ function TopBar({ user, helpRef }) {
   };
 
   const handleProfile = () => {
+    console.log("user: ", user);
     navigate("/profile-page", { state: { user: user } });
   };
 

@@ -2,11 +2,11 @@ import { Bus, BusFront, LogOut, Menu, UserCircle2 } from "lucide-react";
 import "./TopBar.css";
 import { useNavigate } from "react-router-dom";
 
-function TopBar({ user }) {
+function TopBar() {
   const navigate = useNavigate();
 
   const navigateToProfile = () => {
-    navigate("/", { state: { user: user } });
+    navigate("/");
   };
 
   return (

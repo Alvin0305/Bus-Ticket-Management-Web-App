@@ -3,6 +3,8 @@ import "./Revenue.css";
 import { FiTag, FiTrendingUp } from "react-icons/fi";
 import { FaDollarSign, FaMoneyBillWave } from "react-icons/fa";
 import { Users } from "lucide-react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import {
   Bar,
   BarChart,
@@ -17,127 +19,141 @@ import {
 } from "recharts";
 
 function Revenue() {
-  const getNumberOfBusTicketsBooked = () => {
-    // API call for finding the number of bus tickets booked till now
+  const [ticketsSold, setTicketsSold] = useState(0);
+  const [revenue, setRevenue] = useState(0);
+  const [customers, setCustomers] = useState(0);
+  const [expenditure, setExpenditure] = useState(0);
+  const [profit, setProfit] = useState(0);
+  const [yearWiseData, setYearWiseData] = useState([]);
+  const [customersTicketsData, setCustomersTicketsData] = useState([]);
+  const [topBuses, setTopBuses] = useState([]);
+  const [topUsers, setTopUsers] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-    return 100;
-  };
+  const BACKEND_URL = "http://localhost:5000";
 
-  const getRevenue = () => {
-    // API call for finding the total bus fare
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        setLoading(true);
+        setError(null);
 
-    return 10000;
-  };
+        const [
+          ticketsResponse,
+          revenueResponse,
+          customersResponse,
+          yearWiseResponse,
+          customersTicketsResponse,
+          topBusesResponse,
+          topUsersResponse,
+        ] = await Promise.all([
+          axios.get(`${BACKEND_URL}/api/tickets/count`),
+          axios.get(`${BACKEND_URL}/api/transactions/revenue`),
+          axios.get(`${BACKEND_URL}/api/users/count`),
+          axios.get(`${BACKEND_URL}/api/transactions/yearly`),
+          axios.get(`${BACKEND_URL}/api/users/yearly`),
+          axios.get(`${BACKEND_URL}/api/buses/top`),
+          axios.get(`${BACKEND_URL}/api/users/top`),
+        ]);
 
-  const getNumberOfCustomers = () => {
-    // API call for finding the numbe of customers
+        // Set basic metrics
+        setTicketsSold(ticketsResponse.data.count || 0);
+        setRevenue(revenueResponse.data.revenue || 0);
+        setCustomers(customersResponse.data.count || 0);
+        
+        // Calculate derived metrics
+        const exp = (revenueResponse.data.revenue || 0) * 0.99;
+        setExpenditure(exp);
+        setProfit((revenueResponse.data.revenue || 0) - exp);
 
-    return 100;
-  };
+        // Transform chart data
+        setYearWiseData(
+          (yearWiseResponse.data || []).map(item => ({
+            x: item.year?.toString() || '',
+            y1: item.revenue || 0,
+            y2: item.profit || 0
+          }))
+        );
 
-  const getExpenditure = () => {
-    return getRevenue() * 0.99;
-  };
+        setCustomersTicketsData(
+          (customersTicketsResponse.data || []).map(item => ({
+            x: item.year?.toString() || '',
+            y1: item.customers || 0,
+            y2: item.tickets || 0
+          }))
+        );
 
-  const getProfit = () => {
-    return getRevenue() - getExpenditure();
-  };
+        setTopBuses(
+          (topBusesResponse.data || []).map(item => ({
+            x: item.bus_number || '',
+            y1: item.tickets || 0
+          }))
+        );
 
-  const getYearWiseRevenueExpenditureAndProfit = () => {
-    return [
-      { x: 2015, y1: 10, y2: 15 },
-      { x: 2016, y1: 20, y2: 25 },
-      { x: 2017, y1: 15, y2: 20 },
-      { x: 2018, y1: 25, y2: 30 },
-      { x: 2019, y1: 30, y2: 35 },
-      { x: 2020, y1: 10, y2: 15 },
-      { x: 2021, y1: 20, y2: 25 },
-      { x: 2022, y1: 15, y2: 20 },
-      { x: 2023, y1: 25, y2: 30 },
-      { x: 2024, y1: 30, y2: 35 },
-      { x: 2025, y1: 30, y2: 35 },
-    ];
-  };
+        setTopUsers(
+          (topUsersResponse.data || []).map(item => ({
+            x: item.name || '',
+            y1: item.tickets || 0
+          }))
+        );
 
-  const getYearWiseCustomersAndTickets = () => {
-    return [
-      { x: 2015, y1: 10, y2: 10 },
-      { x: 2016, y1: 20, y2: 12 },
-      { x: 2017, y1: 15, y2: 16 },
-      { x: 2018, y1: 25, y2: 20 },
-      { x: 2019, y1: 30, y2: 8 },
-      { x: 2020, y1: 10, y2: 4 },
-      { x: 2021, y1: 20, y2: 30 },
-      { x: 2022, y1: 15, y2: 12 },
-      { x: 2023, y1: 25, y2: 23 },
-      { x: 2024, y1: 30, y2: 18 },
-      { x: 2025, y1: 30, y2: 27 },
-    ];
-  };
+      } catch (error) {
+        console.error('API Error:', {
+          message: error.message,
+          response: error.response?.data,
+          config: error.config
+        });
+        setError('Failed to load data. Please try again later.');
+      } finally {
+        setLoading(false);
+      }
+    };
 
-  const getTop10Buses = () => {
-    return [
-      { x: "Bus 1", y1: 10 },
-      { x: "Bus 2", y1: 20 },
-      { x: "Bus 3", y1: 15 },
-      { x: "Bus 4", y1: 25 },
-      { x: "Bus 5", y1: 30 },
-      { x: "Bus 6", y1: 10 },
-      { x: "Bus 7", y1: 20 },
-      { x: "Bus 8", y1: 15 },
-      { x: "Bus 9", y1: 25 },
-      { x: "Bus 10", y1: 30 },
-    ];
-  };
+    fetchData();
+  }, []);
 
-  const getTop10Users = () => {
-    return [
-      { x: "User 1", y1: 10 },
-      { x: "User 2", y1: 20 },
-      { x: "User 3", y1: 15 },
-      { x: "User 4", y1: 25 },
-      { x: "User 5", y1: 30 },
-      { x: "User 6", y1: 10 },
-      { x: "User 7", y1: 20 },
-      { x: "User 8", y1: 15 },
-      { x: "User 9", y1: 25 },
-      { x: "User 10", y1: 30 },
-    ];
-  };
+  if (loading) {
+    return <div className="revenue-session">Loading data...</div>;
+  }
+
+  if (error) {
+    return <div className="revenue-session error">{error}</div>;
+  }
 
   return (
     <div className="revenue-session">
       <div className="revenue-top-session">
         <RevenueTile
           name="Tickets Sold"
-          value={getNumberOfBusTicketsBooked()}
+          value={ticketsSold}
           icon={<FiTag size={40} color="#814CB2" />}
         />
         <RevenueTile
           name="Revenue"
-          value={getRevenue()}
+          value={revenue}
           icon={<FaDollarSign size={40} color="green" />}
         />
         <RevenueTile
           name="Expenditure"
-          value={getExpenditure()}
+          value={expenditure}
           icon={<FaMoneyBillWave size={40} color="#F25959" />}
         />
         <RevenueTile
           name="Profit"
-          value={getProfit()}
+          value={profit}
           icon={<FiTrendingUp size={40} color="green" />}
         />
         <RevenueTile
           name="Customers"
-          value={getNumberOfCustomers()}
+          value={customers}
           icon={<Users size={40} color="green" />}
         />
       </div>
       <div className="revenue-graphs">
         <div className="revenue-graphs-div">
           <ResponsiveContainer width="100%" height={400}>
-            <LineChart data={getYearWiseRevenueExpenditureAndProfit()}>
+            <LineChart data={yearWiseData}>
               <CartesianGrid strokeDasharray="3 3" />
               <XAxis dataKey="x" />
               <YAxis />
@@ -162,7 +178,7 @@ function Revenue() {
             </LineChart>
           </ResponsiveContainer>
           <ResponsiveContainer width="100%" height={400}>
-            <LineChart data={getYearWiseCustomersAndTickets()}>
+            <LineChart data={customersTicketsData}>
               <CartesianGrid strokeDasharray="3 3" />
               <XAxis dataKey="x" />
               <YAxis />
@@ -189,7 +205,7 @@ function Revenue() {
         </div>
         <div className="revenue-graphs-div">
           <ResponsiveContainer width="100%" height={400}>
-            <BarChart data={getTop10Buses()}>
+            <BarChart data={topBuses}>
               <CartesianGrid strokeDasharray="3 3" />
               <XAxis dataKey="x" />
               <YAxis />
@@ -199,7 +215,7 @@ function Revenue() {
             </BarChart>
           </ResponsiveContainer>
           <ResponsiveContainer width="100%" height={400}>
-            <BarChart data={getTop10Users()}>
+            <BarChart data={topUsers}>
               <CartesianGrid strokeDasharray="3 3" />
               <XAxis dataKey="x" />
               <YAxis />

@@ -10,7 +10,6 @@ import { useLocation, useNavigate } from "react-router-dom";
 
 function AdminDashboard() {
     const location = useLocation();
-    const { user } = location.state || {};
 
     const [selectedTab, setSelectedTab] = useState("BUSES");
 
@@ -22,7 +21,7 @@ function AdminDashboard() {
     }
 
     return <div className="admin-dashboard">
-        <TopBar user={user}></TopBar>
+        <TopBar></TopBar>
         <NavigationSession setSelectedTab={setSelectedTab} selectedTab={selectedTab}></NavigationSession>
         {getSelectedTab()}
     </div>;

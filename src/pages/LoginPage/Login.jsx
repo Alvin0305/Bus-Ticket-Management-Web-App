@@ -11,30 +11,41 @@ const Login = () => {
 
   // const BACKEND_URL = "https://your-backend.onrender.com";
 
-  const user = {
-    name: "Alvin A S",
-    gender: "M",
-    email: "alvinanildas@gmail.com",
-    password: "abcd1234",
-    userID: "alvin07",
-    phone: "8086290149",
-    DOB: new Date().toISOString().split("T")[0],
-  };
+  // const user = {
+  //   name: "Alvin A S",
+  //   gender: "M",
+  //   email: "alvinanildas@gmail.com",
+  //   password: "abcd1234",
+  //   userID: "alvin07",
+  //   phone: "8086290149",
+  //   DOB: new Date().toISOString().split("T")[0],
+  // };
+
+  const BACKEND_URL = "http://localhost:5000"; // Update this to your backend URL
 
   const handleLogin = async () => {
+
+    if (admin) {
+      navigate("/admin-dashboard-page");
+    }
     try {
-      // const response = await axios.post(`${BACKEND_URL}/api/url/shorten`, { url });
-      // if (response.status === 200) {
-      if (admin) {
-        navigate("/admin-dashboard-page", { state: { user: user } });
-      } else {
+      const response = await axios.post(`${BACKEND_URL}/api/login`, {
+        email,
+        password,
+      });
+      if (response.status == 200)
+      {
+        const user = response.data.user
         navigate("/landing-page", { state: { user: user } });
       }
+      console.log(response);
+      }
       // }
-    } catch (error) {
+    catch (error) {
       alert("Invalid credentials");
     }
   };
+
 
   return (
     <div className="login-page">
@@ -62,13 +73,18 @@ const Login = () => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-          <input
-            className="login-input"
-            type="checkbox"
-            placeholder="Admin"
-            value={false}
-            onChange={(e) => setAdmin(e.target.value)}
-          />
+          <div
+            className="admin-checkbox" >
+            
+            <input
+              // id="admin-checkbox"
+              type="checkbox"
+              placeholder="Admin"
+              value={false}
+              onChange={(e) => setAdmin(e.target.value)}
+            />
+            Admin
+          </div>
           <button className="login-button" onClick={handleLogin}>
             LOG IN
           </button>
