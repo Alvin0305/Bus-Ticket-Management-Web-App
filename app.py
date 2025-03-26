@@ -361,5 +361,96 @@ def get_top_users():
         cursor.close()
         connection.close()
 
+# @app.route('/api/admin-user/search', methods=['POST'])
+# def get_search_user():
+#     data = request.get_json()
+#     option = data.get("option")
+#     searchValue = data.get("searchValue")
+
+#     connection = get_db_connection()
+#     if not connection:
+#         return jsonify({'error': 'Database connection failed'}), 500
+    
+#     cursor = connection.cursor(dictionary=True)
+#     # cursor = connection.cursor(dictionary=True)
+#     try:
+#         query = """
+#         SELECT* 
+#         FROM 
+#             User 
+#         WHERE %s LIKE %s%
+#         """
+
+#         cursor.execute(query, (option, searchValue))
+#         connection.commit()
+#         results=cursor.fetchall()
+#         return jsonify(results), 200
+#     except Error as e:
+#         print(f"Database error: {e}")
+#         return jsonify({'error': str(e)}), 500
+#     # finally:
+#     cursor.close()
+#     connection.close()
+@app.route('/api/admin-user/search', methods=['POST'])
+def get_search_user():
+    data = request.get_json()
+    option = data.get("option")
+    searchValue = data.get("searchValue")
+
+    # Validate allowed columns to prevent SQL injection
+    allowed_columns = ['name', 'email', 'phone', 'all']  # Add your actual column names
+    if option not in allowed_columns:
+        return jsonify({'error': 'Invalid search option'}), 400
+
+    connection = get_db_connection()
+    if not connection:
+        return jsonify({'error': 'Database connection failed'}), 500
+    
+    try:
+        with connection.cursor(dictionary=True) as cursor:
+            # Safe parameterized query with proper LIKE syntax
+            if option == "all" :
+                query = f"""
+                SELECT 
+                    name, 
+                    gender, 
+                    email, 
+                    user_id, 
+                    phone, 
+                    dob 
+                FROM User 
+                """
+
+                cursor.execute(query)
+                # Add % wildcard to search for values that START with searchValue
+            else :
+
+                query = f"""
+                SELECT 
+                    name, 
+                    gender, 
+                    email, 
+                    user_id, 
+                    phone, 
+                    dob 
+                FROM User 
+                WHERE {option} LIKE %s
+                """
+                # Add % wildcard to search for values that START with searchValue
+                search_pattern = f"%{searchValue}%"
+                cursor.execute(query, (search_pattern,))
+            
+            
+            results = cursor.fetchall()
+            return jsonify(results), 200
+    except Error as e:
+        print(f"Database error: {e}")
+        return jsonify({'error': str(e)}), 500
+    finally:
+        if connection:
+            connection.close()
+
+
+
 if __name__ == '__main__':
     app.run(debug=True, port=5000)

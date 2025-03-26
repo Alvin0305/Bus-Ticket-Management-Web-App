@@ -2,11 +2,13 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "./Login.css";
+import { FaEyeSlash, FaEye } from "react-icons/fa";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [admin, setAdmin] = useState(false);
+  const [showPassword, setshowPassword] = useState(true)
   const navigate = useNavigate();
 
   // const BACKEND_URL = "https://your-backend.onrender.com";
@@ -46,6 +48,10 @@ const Login = () => {
     }
   };
 
+  const togglePasswordVisibility = () => {
+    setshowPassword(!showPassword);
+  }
+
 
   return (
     <div className="login-page">
@@ -66,13 +72,18 @@ const Login = () => {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
-          <input
-            className="login-input"
-            type="password"
-            placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
+           <div className="password-field">
+            <input
+              className="login-input password-input"
+              type={showPassword ? "text" : "password"}
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+            <span className="password-toggle-icon" onClick={togglePasswordVisibility}>
+              {showPassword ? <FaEyeSlash /> : <FaEye />}
+            </span>
+          </div>
           <div
             className="admin-checkbox" >
             

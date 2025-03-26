@@ -14,7 +14,7 @@ function UserTile({ user }) {
   };
 
   const getImage = () => {
-    if (user.gender === "M") {
+    if (user.gender === "Male") {
       return getBoyImage();
     } else {
       return getGirlImage();
@@ -83,12 +83,12 @@ function UserTile({ user }) {
         <div className="users-session-details">
           <h2 className="users-session-username">{user.name}</h2>
           <div className="users-session-horizontal-div">
-            <h4 className="users-session-id">{user.userID}</h4>
+            <h4 className="users-session-id">{user.user_id}</h4>
             <h4 className="users-session-email">{user.email}</h4>
           </div>
           <div className="users-session-horizontal-div">
             <h4 className="users-session-phone">{user.phone}</h4>
-            <h4 className="users-session-dob">{user.DOB}</h4>
+            <h4 className="users-session-dob">{user.dob?.slice(5, 17)}</h4>
           </div>
           <div className="users-session-button-div">
             <div className="users-session-spacer"></div>
